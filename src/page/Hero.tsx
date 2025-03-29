@@ -57,7 +57,7 @@ function Hero() {
         <img
           src={HeroImage}
           alt="Barun Tiwary"
-          className="h-[20rem] w-[20rem] rounded-md lg:rounded-full"
+          className="h-[20rem] w-[20rem] rounded-md lg:rounded-full shadow-lg shadow-blue-400/50 object-cover"
         />
         <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
           <a
