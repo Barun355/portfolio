@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Root from './Root.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Hero from './page/Hero.tsx'
+import Home from './page/Home.tsx'
 import Project from './page/Project.tsx'
 import Contact from './page/Contact.tsx'
 
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Hero />
+        element: <Home />
       },
       {
         path: '/projects',

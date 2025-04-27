@@ -12,7 +12,7 @@ interface BtnPropType {
 }
 
 const buttonVariants = cva(
-  "rounded-full w-fit transition-all duration-[400ms] font-[inter] tracking-wide",
+  "btn rounded-full w-fit transition-all duration-[150ms] font-[inter] tracking-wide",
   {
     variants: {
       variants: {
@@ -38,7 +38,7 @@ const buttonVariants = cva(
 
 function Button({ children, className, variants, size, icon, onClick }: BtnPropType) {
   return (
-    <button onClick={onClick} className={cn(buttonVariants({ variants, size, className }))}>
+    <button onClick={onClick} className={cn(buttonVariants({ variants, size }), className)}>
       <label>{children}</label>
       {icon && <span>{icon}</span>}
     </button>

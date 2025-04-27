@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 
+
 * {
-    box-sizing: border-box;
-    font-family: 'inter';
+  box-sizing: border-box;
+  font-family: "inter";
 }
 
 body,
 #root {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: fit-content;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
 }
