@@ -6,7 +6,7 @@ import { Theme } from "../types";
 
 function Header() {
   const [sidebar, setSidebar] = useState(false);
-  const [theme, updateTheme] = useTheme();
+  const {theme, updateTheme} = useTheme();
 
   const navItems = [
     {

@@ -17,7 +17,7 @@ function Root() {
   return (
     <div className="w-full md:w-[80%] h-full lg:h-screen flex flex-col gap-4 justify-center items-center">
       <Header />
-      <div className="w-[90%] md:w-auto flex justify-center h-full pb-8">
+      <div className="w-[90%] md:w-full flex justify-center h-full pb-8">
         <Outlet />
       </div>
     </div>

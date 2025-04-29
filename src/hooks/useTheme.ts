@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Theme } from "../types";
 
 
-export const useTheme = (): [theme: Theme, updateTheme: () => void] => {
+export const useTheme = (): {theme: Theme, updateTheme: () => void} => {
   const [theme, setTheme] = useState<Theme>(Theme.light);
 
   function updateTheme() {
@@ -28,5 +28,5 @@ export const useTheme = (): [theme: Theme, updateTheme: () => void] => {
     setTheme(theme === Theme.light ? Theme.light: Theme.dark)
   }, [theme]);
 
-  return [theme, updateTheme];
+  return {theme, updateTheme};
 };

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "../components/ui/button";
 import { TypeAnimation } from "react-type-animation";
 import { Github, Linkedin, LucideNetwork, Twitter } from "lucide-react";
+import SkillScroll from "../components/SkillScroll";
 
 function Home() {
   const roles = ["Freelancer", "Full Stack", "CF Founder"];
@@ -17,6 +18,7 @@ function Home() {
     "Node.js",
     1000,
   ];
+
   const socials = [
     {
       icon: Linkedin,
@@ -37,22 +39,21 @@ function Home() {
   ];
 
   return (
-    <>
+    <div className="flex flex-col items-center">
       <section
         className="flex flex-col gap-10 lg:flex-row justify-between items-center h-full"
         id="hero"
       >
         <div className="flex flex-col gap-4 w-full lg:w-[58%]">
-          <div className="flex gap-3">
+          <div className="flex gap-2 md:gap-3">
             {roles.map((role, index) => (
               <div
-                className="flex justify-center items-center gap-4"
+                className="flex justify-center items-center gap-2 md:gap-4"
                 key={role}
               >
                 <span className="px-4 text-xs py-1 bg-blue-500/20 text-blue-600 shadow-xl/40 shadow-blue-500/50 w-fit rounded-full">
                   {role}
                 </span>
-
                 {index !== roles.length - 1 && (
                   <span className="animate-pulse h-3 w-3 rounded-full bg-indigo-500 shadow-2xl shadow-indigo-500"></span>
                 )}
@@ -115,14 +116,14 @@ function Home() {
           <img
             src="/hero.png"
             alt="Barun Tiwary"
-            className="h-full w-full md:h-[32rem] md:w-[32rem] rounded-md lg:rounded-full object-cover"
+            className="h-[20rem] w-[20rem] md:h-[32rem] md:w-[32rem] rounded-md lg:rounded-full object-cover"
           />
         </div>
       </section>
-      <section id="about-me">
-
+      <section className="py-10">
+        <SkillScroll />
       </section>
-    </>
+    </div>
   );
 }
 
