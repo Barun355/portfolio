@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MoonIcon, Sun } from "lucide-react";
-import { useTheme } from "../hooks/useTheme";
 import { Theme } from "../types";
+import { ThemeContext } from "../context/themeContext";
+import { cn } from "../utils";
 
 function Header() {
   const [sidebar, setSidebar] = useState(false);
-  const {theme, updateTheme} = useTheme();
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  const [isSticky, setIsSticky] = useState(false)
 
   const navItems = [
     {
@@ -31,15 +34,24 @@ function Header() {
     {
       label: "Community",
       slug: "",
-      link: "https://chat.whatsapp.com/K2Bp6fH99rpFAWJ8STqNNX",
+      link: "https://codefirst.fun",
       icon: false,
       color: "green",
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
   return (
     <div className="flex relative flex-col justify-center lg:justify-center w-full items-center lg:items-end pt-0 md:pt-8 pb-[1rem] md:pb-[4rem]">
-      <div className="flex items-center justify-between gap-16 px-6 py-3 border-b md:border glass w-full rounded-none lg:w-fit md:rounded-full">
+      <div className={cn("flex items-center justify-between gap-16 px-6 py-3 border-b md:border-2 glass w-full rounded-none lg:w-fit md:rounded-full transition-all duration-500", isSticky && "md:fixed md:top-9 md:z-50", theme === Theme.light ? "border-indigo-800" : "border-white/10")}>
         <Link
           to={"/"}
           className="font-bold flex gap-3 justify-center items-center"
@@ -77,7 +89,7 @@ function Header() {
         <div className="flex gap-4">
           <div
             className="w-fit bg-base-200 rounded-full p-2"
-            onClick={updateTheme}
+            onClick={() => setTheme(theme === Theme.dark ? Theme.light : Theme.dark)}
           >
             {theme === Theme.dark ? <Sun /> : <MoonIcon />}
           </div>

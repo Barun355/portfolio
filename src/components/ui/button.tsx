@@ -16,12 +16,12 @@ const buttonVariants = cva(
   {
     variants: {
       variants: {
-        primary: "bg-blue-400 hover:bg-blue-500 hover:text-black",
+        primary: "bg-indigo-600 hover:bg-indigo-500 text-white/80 hover:bg-indigo-500",
         secondary: "bg-green-400 hover:bg-green-500 hover:text-black",
         "outline-primary":
-          "border border-blue-400 hover:bg-blue-400 hover:text-black",
+          "border border-indigo-400 hover:bg-indigo-500 hover:text-black",
         "outline-secondary":
-          "border border-blue-400 hover:bg-green-400 hover:text-black",
+          "border border-indigo-400 hover:bg-green-400 hover:text-black",
       },
       size: {
         sm: "text-[0.75rem] h-[2.5rem] px-3",

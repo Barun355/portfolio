@@ -8,10 +8,12 @@ import {
   SiPrisma,
   SiShadcnui,
 } from "react-icons/si";
-import { useTheme } from "../hooks/useTheme";
+// import { useTheme } from "../hooks/useTheme";
 import { Theme } from "../types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { cn } from "../utils";
+import { useAnimation, motion } from "framer-motion";
+import { ThemeContext } from "../context/themeContext";
 
 type SkillType = {
   label: string;
@@ -87,8 +89,11 @@ const SkillScroll = ({
   skills?: SkillType[];
 }) => {
   const [localSkills, setLocalSkills] = useState<SkillType[]>(skills);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
 
-  const {theme} = useTheme();
+  // const { theme } = useTheme();
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     if (localSkills.length === 0) {
@@ -115,23 +120,71 @@ const SkillScroll = ({
     setLocalSkills(updatedSkills);
   }, [theme]);
 
-  console.log(localSkills);
+  useEffect(() => {
+    const scrollContainer = containerRef.current;
+    if (!scrollContainer) return;
+
+    let animationFrame: any;
+    let startTime: any = null;
+    const duration = 100000;
+
+    const animate = (timestamp: any) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = (elapsed % duration) / duration;
+      const scrollPosition = progress * scrollContainer.scrollWidth;
+
+      controls.set({ x: -scrollPosition });
+
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+  
   return (
-    <div className="flex gap-4 justify-start items-center overflow-x-scroll md:overflow-auto w-[20rem] md:w-full h-20">
-      {localSkills.length > 0 &&
-        localSkills.map((skill) => (
-          <span
-            className={cn(
-              `flex justify-center w-full items-center gap-3 rounded-full px-[0.8rem] py-2 text-xs border border-black/20`,
-              skill.bgColor,
-              skill.textColor
-            )}
-            key={skill.label}
-          >
-            <skill.icon />
-            <label className="w-16">{skill.label}</label>
-          </span>
-        ))}
+    <div className="overflow-hidden relative">
+      <div
+        className={cn(
+          "absolute left-0 top-0 bottom-0 w-5 md:w-[8rem] lg:w-[20rem] bg-gradient-to-r z-10",
+          theme === Theme.light ? "from-white" : "from-black",
+          "to-transparent"
+        )}
+      ></div>
+      <div
+        className={cn(
+          "absolute right-0 top-0 bottom-0 w-5 md:w-[8rem] lg:w-[20rem] bg-gradient-to-l to-transparent z-10",
+          theme === Theme.light ? "from-white" : "from-black"
+        )}
+      ></div>
+      <motion.div
+        className="flex gap-4 justify-start items-center w-[20rem] md:w-full h-20 z-50"
+        ref={containerRef}
+        whileInView="visible"
+        viewport={{ once: true }}
+        animate={controls}
+        transition={{ type: "tween", ease: "circIn" }}
+      >
+        {localSkills.length > 0 &&
+          localSkills.map((skill) => (
+            <span
+              className={cn(
+                `flex justify-center w-full items-center gap-3 rounded-full px-[0.8rem] py-2 text-xs border-2`,
+                theme === Theme.light ? 'border-black/20' : 'border-white/10',
+                skill.bgColor,
+                skill.textColor
+              )}
+              key={skill.label}
+            >
+              <skill.icon />
+              <label className="w-16">{skill.label}</label>
+            </span>
+          ))}
+      </motion.div>
     </div>
   );
 };

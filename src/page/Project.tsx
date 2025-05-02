@@ -1,11 +1,14 @@
-
 function Project() {
   return (
-    <div className="h-full flex flex-col items-start justify-center gap-2">
-        <h1 className="text-5xl">Will update soon...</h1>
-        <span className="text-lg">Social proof is <a href="https://linkedin.com/in/barun-tiwary" target="_blank" className="text-blue-400 underline">here</a></span>
+    <div className="h-full flex flex-col items-start w-full justify-center gap-2">
+      <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mt-4">
+        Projects
+      </h1>
+      <div className="flex flex-col gap-4 w-full">
+        
+      </div>
     </div>
-  )
+  );
 }
 
-export default Project
+export default Project;
