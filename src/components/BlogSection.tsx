@@ -87,7 +87,7 @@ const BlogSection = () => {
                     <div className="flex items-center text-white">
                       <span className="inline-flex items-center bg-indigo-600 px-2 py-1 rounded-full text-xs font-medium">
                         <Calendar className="w-3 h-3 mr-1" />
-                        {formatDate(post.dateAdded)}
+                        {formatDate(post.publishedAt)}
                       </span>
                       <span className="inline-flex items-center bg-purple-600 px-2 py-1 rounded-full text-xs font-medium ml-2">
                         <Clock className="w-3 h-3 mr-1" />

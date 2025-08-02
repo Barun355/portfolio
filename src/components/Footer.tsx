@@ -194,7 +194,7 @@ const Footer = () => {
 
         <div className="w-full border-t border-indigo-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className={cn("text-sm", theme === Theme.dark && "text-indigo-200")}>
-            &copy; {new Date().getFullYear()} Jane Developer. All rights
+            &copy; {new Date().getFullYear()} Barun Developer. All rights
             reserved.
           </p>
           <div className="mt-4 md:mt-0">

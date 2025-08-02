@@ -9,6 +9,7 @@ export async function fetchTopBlogPosts(publicationId: string, numberOfPosts: nu
                 title
                 brief
                 slug
+                publishedAt
                 updatedAt
                 coverImage {
                   url

@@ -61,7 +61,7 @@ function Home() {
     {
       title: "Foruppo",
       description:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+        "During my project management internship at Foruppo, I was involved in over three distinct projects, where I applied my theoretical knowledge to real-world scenarios. I supported project lifecycles from initiation to closure, gaining hands-on experience in planning, execution, and monitoring. This role honed my problem-solving skills and my ability to collaborate with various teams to address project challenges and adapt to changing needs, preparing me for a future role as a software engineer.",
       skills: ["Wordpress", "HTML", "CSS", "JavaScript"],
       images: [
         {
@@ -82,7 +82,7 @@ function Home() {
     {
       title: "Generix Info Tech",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "As a Full Stack Development Teacher at Genrix Info Tech, I guided a batch of students through an internship focused on building a custom e-commerce platform from the ground up. I provided instruction on full-stack development using Raw PHP with MySQL for the backend and Vanilla HTML, CSS, and JavaScript for the frontend. Under my mentorship, students developed a deep understanding of core concepts by building a unique e-commerce product, not a clone, which included a secure authentication system, product listing, detailed product pages, a shopping cart, and a product upload feature. This experience solidified their foundational knowledge and prepared them for future real-world projects.",
       skills: ["Team Management", "HTML", "CSS", "JS", "PHP"],
       images: [{ slug: "/generix-gallery.jpeg", object: "cover", bg: null }],
       start: "March 2024",
@@ -100,7 +100,7 @@ function Home() {
     {
       title: "Autonmis",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "At Autonmis, a data-driven solutions startup, I worked as a Full Stack Developer on various features, with a primary focus on developing data connectors. My work enabled clients, including data scientists and analysts, to seamlessly integrate data from multiple sources like Snowflake, Google Analytics, and HubSpot into our platform. This consolidation of data provided a unified source for generating valuable insights and creating comprehensive dashboards.",
       skills: [
         "Python",
         "Airflow",
@@ -136,33 +136,9 @@ function Home() {
       rating: 5,
       image: "/clients-review/client-review-1.png",
       style: {
-        dark: { backgroundImage: "linear-gradient(0deg, #7028e4 0%, #e5b2ca 100%)"},
-        light: {
-          backgroundImage: "linear-gradient(90deg, #fdfbfb 0%, #ebedee 100%)",
+        dark: {
+          backgroundImage: "linear-gradient(0deg, #7028e4 0%, #e5b2ca 100%)",
         },
-      },
-    },
-    {
-      name: "Jane Smith",
-      review:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      rating: 4,
-      image: "/clients-review/client-review-1.png",
-      style: {
-        dark: { backgroundImage: "linear-gradient(0deg, #7028e4 0%, #e5b2ca 100%)"},
-        light: {
-          backgroundImage: "linear-gradient(90deg, #fdfbfb 0%, #ebedee 100%)",
-        },
-      },
-    },
-    {
-      name: "Jane Smith",
-      review:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      rating: 4,
-      image: "/clients-review/client-review-1.png",
-      style: {
-        dark: { backgroundImage: "linear-gradient(0deg, #7028e4 0%, #e5b2ca 100%)"},
         light: {
           backgroundImage: "linear-gradient(90deg, #fdfbfb 0%, #ebedee 100%)",
         },
@@ -528,88 +504,98 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-10" id="clients">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mt-4">
-            Client Reviews
-          </h1>
-          <div className="flex gap-4 md:space-y-6 mt-4 justify-center items-center flex-col md:flex-row">
-            {clientReviews.length > 0 &&
-              clientReviews.map((item, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    "rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] group",
-                    "flex flex-col h-full w-full",
-                    theme === Theme.dark
-                      ? "bg-white/10 text-white border-8 border-indigo-800/20"
-                      : "bg-white text-gray-800 border-8 border-gray-200"
-                  )}
-                >
+      {clientReviews.length > 2 && (
+        <section className="w-full py-10" id="clients">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mt-4">
+              Client Reviews
+            </h1>
+            <div className="flex gap-4 md:space-y-6 mt-4 justify-start items-center flex-col md:flex-row">
+              {clientReviews.length > 0 &&
+                clientReviews.map((item, index) => (
                   <div
+                    key={index}
                     className={cn(
-                      "relative h-64 md:h-48 lg:h-60 w-full overflow-hidden",
-                      "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black/70"
-                    )}
-                  >
-                    <img
-                      src={item.image}
-                      alt={`${item.name}'s review`}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-
-                    {/* Quote icon overlay */}
-                    <div className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-md p-2 rounded-full overflow-hidden">
-                      <Quote
-                        size={24}
-                        className={
-                          theme === Theme.dark ? "text-white" : "text-gray-800"
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  <div
-                    className={cn(
-                      "relative flex-grow p-6 rounded-b-xl",
+                      "rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] group",
+                      "flex flex-col h-full w-full sm:w-[28rem]",
                       theme === Theme.dark
-                        ? "bg-white/10 text-white border-t-4 border-blue-500/50"
-                        : "bg-white text-gray-800 border-t-4 border-blue-400"
+                        ? "bg-white/10 text-white border-8 border-indigo-800/20"
+                        : "bg-white text-gray-800 border-8 border-gray-200"
                     )}
-                    style={
-                      theme === Theme.light ? item.style.light : item.style.dark
-                    }
                   >
-                    {/* Top border accent */}
-                    <div className="mb-3 flex items-center justify-between">
-                      <h3 className="font-bold text-lg">{item.name}</h3>
-                      <div className="flex">
-                        {renderRatingStars(item.rating)}
+                    <div
+                      className={cn(
+                        "relative h-64 md:h-48 lg:h-60 w-full overflow-hidden",
+                        "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black/70"
+                      )}
+                    >
+                      <img
+                        src={item.image}
+                        alt={`${item.name}'s review`}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+
+                      {/* Quote icon overlay */}
+                      <div className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-md p-2 rounded-full overflow-hidden">
+                        <Quote
+                          size={24}
+                          className={
+                            theme === Theme.dark
+                              ? "text-white"
+                              : "text-gray-800"
+                          }
+                        />
                       </div>
                     </div>
 
-                    <p
-                      className={cn(
-                        "text-sm leading-relaxed italic",
-                        theme === Theme.dark ? "text-gray-200" : "text-gray-600"
-                      )}
-                    >
-                      "{item.review}"
-                    </p>
-
-                    {/* Visual element for additional style */}
                     <div
                       className={cn(
-                        "absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-16 rounded-full",
-                        theme === Theme.dark ? "bg-blue-400/70" : "bg-blue-500"
+                        "relative flex-grow p-6 rounded-b-xl",
+                        theme === Theme.dark
+                          ? "bg-white/10 text-white border-t-4 border-blue-500/50"
+                          : "bg-white text-gray-800 border-t-4 border-blue-400"
                       )}
-                    ></div>
+                      style={
+                        theme === Theme.light
+                          ? item.style.light
+                          : item.style.dark
+                      }
+                    >
+                      {/* Top border accent */}
+                      <div className="mb-3 flex items-center justify-between">
+                        <h3 className="font-bold text-lg">{item.name}</h3>
+                        <div className="flex">
+                          {renderRatingStars(item.rating)}
+                        </div>
+                      </div>
+
+                      <p
+                        className={cn(
+                          "text-sm leading-relaxed italic",
+                          theme === Theme.dark
+                            ? "text-gray-200"
+                            : "text-gray-600"
+                        )}
+                      >
+                        "{item.review}"
+                      </p>
+
+                      {/* Visual element for additional style */}
+                      <div
+                        className={cn(
+                          "absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-16 rounded-full",
+                          theme === Theme.dark
+                            ? "bg-blue-400/70"
+                            : "bg-blue-500"
+                        )}
+                      ></div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       <section className="w-full py-10" id="blogs">
         <BlogSection />
       </section>
