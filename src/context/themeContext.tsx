@@ -3,7 +3,7 @@ import { Theme } from "../types";
 
 
 export const ThemeContext = createContext({
-    theme: "black",
+    theme: "dark",
     setTheme: (theme: Theme) => {
         localStorage.setItem("theme", theme);
         document.documentElement.setAttribute("data-theme", theme);

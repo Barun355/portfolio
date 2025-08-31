@@ -57,7 +57,7 @@ function Header() {
           className="font-bold flex gap-3 justify-center items-center"
         >
           <img
-            src="/profile.jpg"
+            src="/profile.png"
             alt="Barun Tiwary"
             className="h-8 w-8 rounded-full"
           />
@@ -122,7 +122,7 @@ function Header() {
             className="font-bold flex gap-2 justify-center items-center"
           >
             <img
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Barun Tiwary"
               className="h-8 w-8 rounded-full"
             />

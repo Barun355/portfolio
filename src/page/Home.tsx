@@ -146,6 +146,8 @@ function Home() {
     },
   ];
 
+  console.log(theme);
+
   const [currentImageIndex, setCurrentImageIndex] = useState<{
     [key: number]: number;
   }>({});
@@ -193,10 +195,21 @@ function Home() {
   return (
     <div className="flex flex-col items-center">
       <section
-        className="flex flex-col gap-10 lg:flex-row justify-between items-center h-full"
+        className="flex flex-col gap-10 lg:flex-row justify-between items-center h-full relative"
         id="hero"
       >
-        <div className="flex flex-col gap-4 w-full lg:w-[58%]">
+        <div
+          className="pointer-events-none absolute inset-0 [background-size:20px_20px] scale-110"
+          style={{
+            backgroundImage:
+              theme === Theme.dark
+                ? "radial-gradient(#404040 1px, transparent 1px)"
+                : "radial-gradient(#c6c6c6 1px, transparent 1px)",
+          }}
+        ></div>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-base-100 scale-110"></div>
+
+        <div className="flex flex-col gap-4 w-full lg:w-[58%] z-10">
           <div className="flex gap-2 md:gap-3">
             {roles.map((role, index) => (
               <div
@@ -212,7 +225,10 @@ function Home() {
               </div>
             ))}
           </div>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mt-4">
+          <h2 className="text-xl lg:text-3xl font-bold text-blue-400">
+            Barun Tiwary
+          </h2>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
             Building{" "}
             <a href="https://codefirst.fun" target="_blank">
               <b className="text-blue-400 hover:underline">CodeFirst.fun</b>
@@ -261,11 +277,18 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex w-full lg:w-[42%] h-full justify-center items-center gap-20 lg:gap-4">
+        <div className="flex w-full lg:w-[42%] h-full justify-center items-center gap-20 lg:gap-4 z-10 relative">
+          <div
+            className={cn(
+              "h-[20rem] md:h-[32rem] rounded-md lg:rounded-full absolute scale-110",
+              "[mask-image:radial-gradient(circle_at_center,transparent_20%,black)]"
+            )}
+          ></div>
+          <div className="border-l-[.5rem] border-t-[.5rem] border-blue-500 rounded-lg lg:rounded-full absolute h-[30rem] w-[20rem] md:h-[32rem] md:w-[24rem]"></div>
           <img
             src="/hero.png"
             alt="Barun Tiwary"
-            className="h-[20rem] w-[20rem] md:h-[32rem] md:w-[32rem] rounded-md lg:rounded-full object-cover"
+            className="h-[30rem] w-[20rem] md:h-[32rem] md:w-[24rem] rounded-md lg:rounded-full object-cover"
           />
         </div>
       </section>

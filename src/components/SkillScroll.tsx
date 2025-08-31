@@ -104,13 +104,13 @@ const SkillScroll = ({
       let bgColor = "",
         textColor = "";
       if (skill.bgColor.includes("white") && theme === Theme.light) {
-        bgColor = skill.bgColor.replace("white/20", "black/5");
+        bgColor = skill.bgColor.replace("white/20", "base/5");
       } else {
         bgColor = skill.bgColor;
       }
 
       if (skill.textColor.includes("white") && theme === Theme.light) {
-        textColor = skill.textColor.replace("white", "black");
+        textColor = skill.textColor.replace("white", "base");
       } else {
         textColor = skill.textColor;
       }
@@ -151,14 +151,14 @@ const SkillScroll = ({
       <div
         className={cn(
           "absolute left-0 top-0 bottom-0 w-5 md:w-[8rem] lg:w-[20rem] bg-gradient-to-r z-10",
-          theme === Theme.light ? "from-white" : "from-black",
+          theme === Theme.light ? "from-white" : "from-base-100",
           "to-transparent"
         )}
       ></div>
       <div
         className={cn(
           "absolute right-0 top-0 bottom-0 w-5 md:w-[8rem] lg:w-[20rem] bg-gradient-to-l to-transparent z-10",
-          theme === Theme.light ? "from-white" : "from-black"
+          theme === Theme.light ? "from-white" : "from-base-100"
         )}
       ></div>
       <motion.div
