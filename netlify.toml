@@ -1,4 +1,16 @@
-[[redirect]]
+[[redirects]]
   from="*"
   to="/index.html"
   status=200
+
+[[redirects]]
+  from="/privacy-policy"
+  to="https://www.termsfeed.com/live/061dcb0b-25b9-4e95-989f-e8f32ac2cb59"
+  force=true
+  status=301
+
+[[redirects]]
+  from="/support"
+  to="/"
+  force=true
+  status=301
