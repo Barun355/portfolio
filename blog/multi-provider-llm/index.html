@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One prompt, three models — Barun Tiwary</title>
+    <meta name="description" content="Running the same question across providers, then synthesizing an answer." />
+    <link rel="canonical" href="https://baruntiwary.dev/blog/multi-provider-llm/" />
+    <meta property="og:type" content="article" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      const t = localStorage.getItem("theme")
+      if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/work/">Work</a>
+          <a href="/blog/" aria-current="page">Blog</a>
+          <a href="/resume/">Resume</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn" data-search-open type="button" aria-label="Open blog search (Ctrl+K)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <span class="kbd">Ctrl K</span>
+          </button>
+          <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch to dark theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="wrap article">
+        <a class="back" href="/blog/">Back to Blog</a>
+        <p class="muted">AI · Engineering</p>
+        <h1>One prompt, three models</h1>
+        <p class="lede">I did not want a demo that only works when one vendor is up and in the mood.</p>
+        <div class="article-meta">
+          <time datetime="2026-08-10">10 Aug 2026</time>
+          <button class="share" type="button" data-share>Share</button>
+        </div>
+
+        <p>The AI Answer Engine sends the same prompt to OpenAI, Gemini, and SarvamAI at once. Each call can fail. Each answer can be thin. A later aggregation step writes one response from what came back.</p>
+        <p>It lives as a pnpm monorepo: core, CLI, logging. That split is the point. The model call is a library. The CLI is a user. Logs are not an afterthought dumped in <code>console.log</code>.</p>
+
+        <h2>Retries are product behavior</h2>
+        <p>Providers flake. Timeouts happen. A retry with a budget is the difference between “AI feature” and “this form is dead.” The engine retries the provider that failed, not the whole fan-out, so one slow vendor does not stall the others.</p>
+
+        <h2>Aggregation is a trust decision</h2>
+        <p>The last model sees other outputs. That is useful and dangerous. Useful: it can drop a hallucinated name that only one provider invented. Dangerous: it can launder a bad claim if you treat the merge as ground truth.</p>
+        <p>I treat the merge as a synthesis, not a verdict. The user still gets one answer. I do not pretend the answer is audited research.</p>
+
+        <h2>Why this is not “AI security” yet</h2>
+        <p>Prompt injection, tool-use abuse, and RAG leakage are things I am learning. This project is production-minded integration: keys, retries, concurrency, logs. Those are prerequisites. They are not a threat model.</p>
+        <p>If I put this in a security company interview, I will say that out loud. The proof is that I can ship a multi-provider path without turning it into a science fair.</p>
+      </article>
+
+      <div class="wrap section">
+        <h2>Related</h2>
+        <div class="stack">
+          <a class="post" href="/blog/webhook-secrets/"><h3>Webhook secrets in a multi-tenant integration</h3><p>Another integration, different trust boundary.</p></a>
+          <a class="post" href="/blog/exposed-postgres/"><h3>Default Postgres credentials are an open door</h3><p>Delivery mistakes still beat clever prompts.</p></a>
+        </div>
+      </div>
+    </main>
+
+    <div class="progress-pill" data-progress style="--p: 0">
+      <span class="ring" aria-hidden="true"></span>
+      <span data-progress-label>Introduction</span>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <blockquote class="quote">Useful AI. Not decorative AI.</blockquote>
+        <div class="footer-cols">
+          <div>
+            <h2>Navigate</h2>
+            <a href="/">Home</a>
+            <a href="/work/">Work</a>
+            <a href="/blog/">Blog</a>
+            <a href="/resume/">Resume</a>
+          </div>
+          <div>
+            <h2>Connect</h2>
+            <a href="mailto:baruntiwary620@gmail.com">Email</a>
+            <a href="https://github.com/Barun355">GitHub</a>
+            <a href="https://linkedin.com/in/barun-tiwary">LinkedIn</a>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Barun Tiwary</p>
+      </div>
+    </footer>
+    <script type="module" src="/js/site.js"></script>
+  </body>
+</html>

@@ -1,21 +1,22 @@
-# Next.js template
+# Barun Tiwary
 
-This is a Next.js template with shadcn/ui.
+Static portfolio. HTML, CSS, Motion. No Next.js.
 
-## Adding components
+## Pages
 
-To add components to your app, run the following command:
+- `/` Home
+- `/work/` Work log
+- `/blog/` Writing
+- `/resume/` Resume
+
+## Run
 
 ```bash
-npx shadcn@latest add button
+python3 -m http.server 4173
 ```
 
-This will place the ui components in the `components` directory.
+Open http://localhost:4173
 
-## Using components
+## Docs
 
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
-```
+Plan and IA: `docs/portfolio-plan/`

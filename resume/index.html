@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume — Barun Tiwary</title>
+    <meta name="description" content="Resume for Barun Tiwary: software, AI systems, and secure production work." />
+    <link rel="canonical" href="https://baruntiwary.dev/resume/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      const t = localStorage.getItem("theme")
+      if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/work/">Work</a>
+          <a href="/blog/">Blog</a>
+          <a href="/resume/" aria-current="page">Resume</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn" data-search-open type="button" aria-label="Open blog search (Ctrl+K)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <span class="kbd">Ctrl K</span>
+          </button>
+          <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch to dark theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap">
+        <header class="page-intro reveal">
+          <h1>Resume</h1>
+          <p>Print this page for a PDF. Facts stay conservative where they still need confirmation.</p>
+        </header>
+
+        <article class="resume reveal">
+          <div class="resume-top">
+            <div>
+              <p class="resume-name">Barun Tiwary</p>
+              <p>Software and AI engineer targeting cybersecurity companies.</p>
+            </div>
+            <div class="resume-links">
+              <a href="mailto:baruntiwary620@gmail.com">baruntiwary620@gmail.com</a>
+              <a href="https://baruntiwary.dev">baruntiwary.dev</a>
+              <a href="https://github.com/Barun355">github.com/Barun355</a>
+              <a href="https://linkedin.com/in/barun-tiwary">linkedin.com/in/barun-tiwary</a>
+              <span>India · IST</span>
+            </div>
+          </div>
+
+          <h2>Summary</h2>
+          <p>I build production software and AI applications across APIs, data, devices, and deployment. Strongest proof is full-stack delivery plus concrete security work: auth, isolation, webhook checks, and a hardening lesson after a ransomware bot hit an exposed database. I am not claiming SOC or pentest seniority.</p>
+
+          <h2>Experience</h2>
+          <h3>Radlabs — AI Software Engineer</h3>
+          <p class="muted">Present · India</p>
+          <ul>
+            <li>Build AI and software product work at a startup.</li>
+            <li>Public product names and dates pending confirmation.</li>
+          </ul>
+          <h3>Lunar Studio — Founding Engineer</h3>
+          <p class="muted">India · 3-person agency</p>
+          <ul>
+            <li>Owned client work from requirements to production.</li>
+            <li>Client platform: RBAC, sales pipelines, quotations, payments, projects, notifications.</li>
+            <li>Manufacturing ERP: receiving, inventory, stock ledgers, production batches.</li>
+            <li>Smart Weight System: USB scales, QR identities, offline sync, station tokens, plant isolation.</li>
+          </ul>
+          <h3>SIA Health — Software Engineering Intern</h3>
+          <p class="muted">Jun 2025 – Oct 2025</p>
+          <ul>
+            <li>Healthcare software: meal-planning and quiz tools.</li>
+            <li>Next.js, TypeScript, React form workflows.</li>
+          </ul>
+
+          <h2>Selected work</h2>
+          <ul>
+            <li><strong>Smart Weight System</strong> — device-to-cloud operations with offline resilience and station auth.</li>
+            <li><strong>Simple Form</strong> — public forms, rate limits, honeypot; later locked Postgres to loopback after an attack.</li>
+            <li><strong>Mailchimp / Corsair PR</strong> — 56 endpoints, 4 webhooks, OAuth and API-key auth, 56 unit tests.</li>
+            <li><strong>AI Answer Engine</strong> — concurrent OpenAI, Gemini, and SarvamAI calls with retries and aggregation.</li>
+            <li><strong>Custom OIDC provider</strong> — experimental identity work with Bun.</li>
+          </ul>
+
+          <h2>Skills</h2>
+          <p><strong>Strong:</strong> TypeScript, React, Next.js, Node.js, Bun, PostgreSQL, API design, LLM integration, Linux deploy.</p>
+          <p><strong>Used:</strong> React Native, Redis, Docker, Caddy, GitHub Actions, OAuth/OIDC/JWT, MQTT, Raspberry Pi, ESP32.</p>
+          <p><strong>Learning:</strong> application security, AI security, networking, Linux security. TryHackMe / HTB ranks not listed until confirmed.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <blockquote class="quote">Print works. A separate PDF can land later.</blockquote>
+        <div class="footer-cols">
+          <div>
+            <h2>Navigate</h2>
+            <a href="/">Home</a>
+            <a href="/work/">Work</a>
+            <a href="/blog/">Blog</a>
+            <a href="/resume/">Resume</a>
+          </div>
+          <div>
+            <h2>Connect</h2>
+            <a href="mailto:baruntiwary620@gmail.com">Email</a>
+            <a href="https://github.com/Barun355">GitHub</a>
+            <a href="https://linkedin.com/in/barun-tiwary">LinkedIn</a>
+            <a href="https://x.com/21me60">X</a>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Barun Tiwary</p>
+      </div>
+    </footer>
+    <script type="module" src="/js/site.js"></script>
+  </body>
+</html>

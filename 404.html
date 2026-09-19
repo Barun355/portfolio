@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found — Barun Tiwary</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      const t = localStorage.getItem("theme")
+      if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/work/">Work</a>
+          <a href="/blog/">Blog</a>
+          <a href="/resume/">Resume</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn" data-search-open type="button" aria-label="Open blog search (Ctrl+K)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <span class="kbd">Ctrl K</span>
+          </button>
+          <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch to dark theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap not-found reveal">
+        <p class="code">404</p>
+        <h1>Page not found</h1>
+        <p class="muted">That route is not on this site. Terminal, setup, gears, movies, and RSS were never built here.</p>
+        <div class="actions">
+          <a class="btn" href="/">Home</a>
+          <a class="btn ghost" href="/blog/">Blog</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <blockquote class="quote">Four pages. That is the map.</blockquote>
+        <div class="footer-cols">
+          <div>
+            <h2>Navigate</h2>
+            <a href="/">Home</a>
+            <a href="/work/">Work</a>
+            <a href="/blog/">Blog</a>
+            <a href="/resume/">Resume</a>
+          </div>
+          <div>
+            <h2>Connect</h2>
+            <a href="mailto:baruntiwary620@gmail.com">Email</a>
+            <a href="https://github.com/Barun355">GitHub</a>
+            <a href="https://linkedin.com/in/barun-tiwary">LinkedIn</a>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Barun Tiwary</p>
+      </div>
+    </footer>
+    <script type="module" src="/js/site.js"></script>
+  </body>
+</html>

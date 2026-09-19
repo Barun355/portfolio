@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Default Postgres credentials are an open door — Barun Tiwary</title>
+    <meta name="description" content="A ransomware bot found a public database. What changed after." />
+    <link rel="canonical" href="https://baruntiwary.dev/blog/exposed-postgres/" />
+    <meta property="og:type" content="article" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      const t = localStorage.getItem("theme")
+      if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/work/">Work</a>
+          <a href="/blog/" aria-current="page">Blog</a>
+          <a href="/resume/">Resume</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn" data-search-open type="button" aria-label="Open blog search (Ctrl+K)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <span class="kbd">Ctrl K</span>
+          </button>
+          <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch to dark theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="wrap article">
+        <a class="back" href="/blog/">Back to Blog</a>
+        <p class="muted">Security · Engineering</p>
+        <h1>Default Postgres credentials are an open door</h1>
+        <p class="lede">A public form product. A database bound to the internet. A ransomware bot that did not need a clever exploit.</p>
+        <div class="article-meta">
+          <time datetime="2026-09-12">12 Sep 2026</time>
+          <button class="share" type="button" data-share>Share</button>
+        </div>
+
+        <p>Simple Form is a Typeform-style builder: public submissions, analytics, exports, embeds, email, plan limits. I also put rate limiting and a honeypot on the public path. That was the part I thought of as “security.”</p>
+        <p>The part I treated as plumbing was the database. PostgreSQL was reachable from the internet. Credentials were the kind you use when you just want the thing to boot.</p>
+
+        <h2>What happened</h2>
+        <p>A ransomware bot found that instance. No custom payload. No insider. It scanned, logged in, and treated the data as leverage.</p>
+        <p>That is the boring version of a breach. Default credentials plus a public port. The application layer never got a vote.</p>
+
+        <h2>What changed</h2>
+        <p>I locked the database to loopback. The app on the same machine still talks to Postgres. The internet does not. Credentials became real secrets, not a convenience string in a compose file.</p>
+        <p>The rest of the box already had Docker, Caddy, PM2, and scripts. Those do not help if the data store is a public login form.</p>
+
+        <blockquote>App-layer controls do not save you from an open database.</blockquote>
+
+        <h2>What I took from it</h2>
+        <p>This is not a pentest story and I will not dress it up as one. It is a deployment mistake with a real attacker on the other end.</p>
+        <p>It is also why I care about system hardening now: bind addresses, credential hygiene, and the gap between “the feature works” and “the machine is closed.” That gap is where a lot of small products live.</p>
+        <p>If you ship a public app, assume scanners will find every port you forgot. Then make the database invisible from outside.</p>
+      </article>
+
+      <div class="wrap section">
+        <h2>Related</h2>
+        <div class="stack">
+          <a class="post" href="/blog/station-tokens/"><h3>Station tokens and plant isolation</h3><p>How factory devices prove who they are.</p></a>
+          <a class="post" href="/blog/webhook-secrets/"><h3>Webhook secrets in a multi-tenant integration</h3><p>Validating callbacks without mixing tenants.</p></a>
+        </div>
+      </div>
+    </main>
+
+    <div class="progress-pill" data-progress style="--p: 0">
+      <span class="ring" aria-hidden="true"></span>
+      <span data-progress-label>Introduction</span>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <blockquote class="quote">Close the door before you decorate the hallway.</blockquote>
+        <div class="footer-cols">
+          <div>
+            <h2>Navigate</h2>
+            <a href="/">Home</a>
+            <a href="/work/">Work</a>
+            <a href="/blog/">Blog</a>
+            <a href="/resume/">Resume</a>
+          </div>
+          <div>
+            <h2>Connect</h2>
+            <a href="mailto:baruntiwary620@gmail.com">Email</a>
+            <a href="https://github.com/Barun355">GitHub</a>
+            <a href="https://linkedin.com/in/barun-tiwary">LinkedIn</a>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Barun Tiwary</p>
+      </div>
+    </footer>
+    <script type="module" src="/js/site.js"></script>
+  </body>
+</html>
