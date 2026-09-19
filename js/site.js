@@ -2,32 +2,32 @@ import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@12
 
 const POSTS = [
   {
-    title: "Default Postgres credentials are an open door",
-    url: "/blog/exposed-postgres/",
-    tags: ["Security", "Engineering"],
+    title: "Offline-first data on a factory floor",
+    url: "/blog/offline-first-erp/",
+    tags: ["Systems", "Engineering"],
     date: "2026-09-12",
-    summary: "A ransomware bot found a public database. What changed after.",
+    summary: "How sync, retries, and idempotency keep operations moving when the network drops.",
   },
   {
-    title: "Station tokens and plant isolation",
-    url: "/blog/station-tokens/",
-    tags: ["Security", "Engineering"],
+    title: "Building a form product from scratch",
+    url: "/blog/building-simple-form/",
+    tags: ["Engineering"],
     date: "2026-08-28",
-    summary: "How factory devices prove who they are without sharing one god key.",
+    summary: "Dynamic fields, validation, submissions, and analytics as one system.",
+  },
+  {
+    title: "SSR, SSG, and shipping Recipe Reveal",
+    url: "/blog/recipe-reveal-nextjs/",
+    tags: ["Engineering"],
+    date: "2026-08-10",
+    summary: "A Next.js app is a rendering decision plus a production deploy.",
   },
   {
     title: "One prompt, three models",
     url: "/blog/multi-provider-llm/",
     tags: ["AI", "Engineering"],
-    date: "2026-08-10",
-    summary: "Running the same question across providers, then synthesizing an answer.",
-  },
-  {
-    title: "Webhook secrets in a multi-tenant integration",
-    url: "/blog/webhook-secrets/",
-    tags: ["Security", "AI"],
     date: "2026-07-22",
-    summary: "Validating Mailchimp webhooks without mixing tenant traffic.",
+    summary: "Running the same question across providers, then synthesizing an answer.",
   },
 ]
 

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Default Postgres credentials are an open door — Barun Tiwary</title>
-    <meta name="description" content="A ransomware bot found a public database. What changed after." />
-    <link rel="canonical" href="https://baruntiwary.dev/blog/exposed-postgres/" />
+    <title>Offline-first data on a factory floor — Barun Tiwary</title>
+    <meta name="description" content="How sync, retries, and idempotency keep operations moving when the network drops." />
+    <link rel="canonical" href="https://baruntiwary.dev/blog/offline-first-erp/" />
     <meta property="og:type" content="article" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,38 +44,33 @@
     <main id="main">
       <article class="wrap article">
         <a class="back" href="/blog/">Back to Blog</a>
-        <p class="muted">Security · Engineering</p>
-        <h1>Default Postgres credentials are an open door</h1>
-        <p class="lede">A public form product. A database bound to the internet. A ransomware bot that did not need a clever exploit.</p>
+        <p class="muted">Systems · Engineering</p>
+        <h1>Offline-first data on a factory floor</h1>
+        <p class="lede">If the line stops because Wi-Fi blinked, the software failed the job.</p>
         <div class="article-meta">
           <time datetime="2026-09-12">12 Sep 2026</time>
           <button class="share" type="button" data-share>Share</button>
         </div>
 
-        <p>Simple Form is a Typeform-style builder: public submissions, analytics, exports, embeds, email, plan limits. I also put rate limiting and a honeypot on the public path. That was the part I thought of as “security.”</p>
-        <p>The part I treated as plumbing was the database. PostgreSQL was reachable from the internet. Credentials were the kind you use when you just want the thing to boot.</p>
+        <p>The Smart ERP system sits on real operations: receiving, inventory, production batches, dispatch. Stations weigh, print QR labels, and write events. The network is not a given.</p>
+        <p>The product requirement was simple to say and hard to build: keep working locally, then catch up without double-counting a bag.</p>
 
-        <h2>What happened</h2>
-        <p>A ransomware bot found that instance. No custom payload. No insider. It scanned, logged in, and treated the data as leverage.</p>
-        <p>That is the boring version of a breach. Default credentials plus a public port. The application layer never got a vote.</p>
+        <h2>Local first, server later</h2>
+        <p>A station writes to a local cache. The UI does not wait for the cloud to confirm a weigh-in. When the link returns, a sync process sends pending events to the API and the relational store.</p>
 
-        <h2>What changed</h2>
-        <p>I locked the database to loopback. The app on the same machine still talks to Postgres. The internet does not. Credentials became real secrets, not a convenience string in a compose file.</p>
-        <p>The rest of the box already had Docker, Caddy, PM2, and scripts. Those do not help if the data store is a public login form.</p>
+        <h2>Idempotency is the real feature</h2>
+        <p>Retries are mandatory. Without an idempotency key, a reconnect storm creates two inventory rows for one physical bag. The event id is part of the data model, not an afterthought in the client.</p>
 
-        <blockquote>App-layer controls do not save you from an open database.</blockquote>
-
-        <h2>What I took from it</h2>
-        <p>This is not a pentest story and I will not dress it up as one. It is a deployment mistake with a real attacker on the other end.</p>
-        <p>It is also why I care about system hardening now: bind addresses, credential hygiene, and the gap between “the feature works” and “the machine is closed.” That gap is where a lot of small products live.</p>
-        <p>If you ship a public app, assume scanners will find every port you forgot. Then make the database invisible from outside.</p>
+        <h2>The system is the data flow</h2>
+        <p>Frontend operations, backend APIs, Postgres, and device integrations have to agree on what “this bag” means. That is systems work. The language is just the implementation layer.</p>
+        <p>Client internals stay off this page. The useful part is the shape: offline cache, queued sync, retries, and one write per real-world event.</p>
       </article>
 
       <div class="wrap section">
         <h2>Related</h2>
         <div class="stack">
-          <a class="post" href="/blog/station-tokens/"><h3>Station tokens and plant isolation</h3><p>How factory devices prove who they are.</p></a>
-          <a class="post" href="/blog/webhook-secrets/"><h3>Webhook secrets in a multi-tenant integration</h3><p>Validating callbacks without mixing tenants.</p></a>
+          <a class="post" href="/blog/building-simple-form/"><h3>Building a form product from scratch</h3><p>Another product, same ownership habit.</p></a>
+          <a class="post" href="/blog/recipe-reveal-nextjs/"><h3>SSR, SSG, and shipping Recipe Reveal</h3><p>Rendering choices, then deploy.</p></a>
         </div>
       </div>
     </main>
@@ -87,7 +82,7 @@
 
     <footer class="site-footer">
       <div class="wrap">
-        <blockquote class="quote">Close the door before you decorate the hallway.</blockquote>
+        <blockquote class="quote">Understand the data flow.</blockquote>
         <div class="footer-cols">
           <div>
             <h2>Navigate</h2>

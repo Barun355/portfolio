@@ -25,10 +25,10 @@ Stack for this build: static HTML, CSS, Motion (vanilla). No Next.js.
 ## Later (not this build)
 
 - Project case-study routes
-- Dedicated security page
 - Resume PDF
 - Comments
 - RSS
+- Security writing (optional, not identity)
 
 ## Build list
 
@@ -49,11 +49,12 @@ Stack for this build: static HTML, CSS, Motion (vanilla). No Next.js.
 
 ## Home hierarchy
 
-1. Name, contact, cyber-company goal
-2. Three experience rows
-3. Selected systems
-4. Three latest posts
-5. Footer
+1. Hero — Full Stack Engineer
+2. Selected work
+3. Experience (Rad Labs, Consultifi Data, SIA Health, Autonomous Work)
+4. Engineering principles
+5. Writing
+6. Footer
 
 ## Research docs
 

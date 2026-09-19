@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Station tokens and plant isolation — Barun Tiwary</title>
-    <meta name="description" content="How factory devices prove who they are without sharing one god key." />
-    <link rel="canonical" href="https://baruntiwary.dev/blog/station-tokens/" />
+    <title>SSR, SSG, and shipping Recipe Reveal — Barun Tiwary</title>
+    <meta name="description" content="A Next.js app is a rendering decision plus a production deploy." />
+    <link rel="canonical" href="https://baruntiwary.dev/blog/recipe-reveal-nextjs/" />
     <meta property="og:type" content="article" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,39 +44,32 @@
     <main id="main">
       <article class="wrap article">
         <a class="back" href="/blog/">Back to Blog</a>
-        <p class="muted">Security · Engineering</p>
-        <h1>Station tokens and plant isolation</h1>
-        <p class="lede">A weight station should speak for itself. It should not speak for the whole factory.</p>
+        <p class="muted">Engineering</p>
+        <h1>SSR, SSG, and shipping Recipe Reveal</h1>
+        <p class="lede">Next.js is useful when you pick a render path on purpose, then actually deploy it.</p>
         <div class="article-meta">
-          <time datetime="2026-08-28">28 Aug 2026</time>
+          <time datetime="2026-08-10">10 Aug 2026</time>
           <button class="share" type="button" data-share>Share</button>
         </div>
 
-        <p>The Smart Weight System sits on a factory floor. USB scales, thermal printers, Raspberry Pi boxes, a local service, and a central server. Bags get a weight and a QR identity. The network drops. Work continues. Later, events catch up.</p>
-        <p>That last part matters. Offline sync is useful. It is also a way to replay bad data if you do not know which station sent it.</p>
+        <p>Recipe Reveal is a full-stack Next.js app. I used it to practice the parts that show up in real product work: routing, data fetching, rendering, and a production deploy — not a localhost-only demo.</p>
 
-        <h2>One key for every box is a bad story</h2>
-        <p>The easy design is a shared API key in every device image. Clone a Pi, you clone the plant. Steal one token, you write inventory as any station.</p>
-        <p>We used station tokens instead. A station proves it is that station. The server maps the token to a plant. One box cannot pretend to be another floor.</p>
+        <h2>SSR vs SSG is a product choice</h2>
+        <p>Static generation is right when the page can be built ahead of time. Server rendering is right when the data is request-specific. Mixing them without a reason makes the app slower and harder to reason about.</p>
 
-        <h2>Isolation is a product rule</h2>
-        <p>Plant-level isolation is not a slogan. Receiving, ledgers, and dispatch only make sense if plant A cannot see plant B’s bags. The token is the first filter. Authorization after that is boring on purpose: 401 if you are nobody, 403 if you are the wrong plant.</p>
+        <h2>The stack is not the story</h2>
+        <p>React and Next.js were tools. The work was: model the pages, fetch the data, keep the HTML useful, and put the app where people can hit it.</p>
 
-        <h2>Offline does not mean sloppy</h2>
-        <p>Local cache, retries, idempotency, and circuit breakers keep the line moving. They also stop a reconnect storm from double-counting a bag. Security here is operational integrity: the record is the bag that was weighed, once.</p>
-
-        <blockquote>A device identity is a trust boundary. Treat it like one.</blockquote>
-
-        <h2>What I will not publish</h2>
-        <p>Client internals, live endpoints, and exact token formats stay off this page. The useful part is the shape: station auth, plant isolation, offline resilience, and tests that gate deploy.</p>
-        <p>This is application and IoT engineering with security in the design. It is not a red-team report.</p>
+        <h2>Ship is the last step of the feature</h2>
+        <p>A rendering strategy that never leaves your machine is a sketch. Deployment, env, and a URL close the loop.</p>
+        <p>This sits as supporting proof: I can take a Next.js app from architecture to production. The heavier systems proof lives in the ERP and Reconnect work.</p>
       </article>
 
       <div class="wrap section">
         <h2>Related</h2>
         <div class="stack">
-          <a class="post" href="/blog/exposed-postgres/"><h3>Default Postgres credentials are an open door</h3><p>What changed after a ransomware bot.</p></a>
-          <a class="post" href="/blog/webhook-secrets/"><h3>Webhook secrets in a multi-tenant integration</h3><p>Callbacks need the same isolation idea.</p></a>
+          <a class="post" href="/blog/building-simple-form/"><h3>Building a form product from scratch</h3><p>Another app owned end to end.</p></a>
+          <a class="post" href="/blog/multi-provider-llm/"><h3>One prompt, three models</h3><p>AI as an integration problem.</p></a>
         </div>
       </div>
     </main>
@@ -88,7 +81,7 @@
 
     <footer class="site-footer">
       <div class="wrap">
-        <blockquote class="quote">Identity first. Then sync.</blockquote>
+        <blockquote class="quote">Ship is part of the feature.</blockquote>
         <div class="footer-cols">
           <div>
             <h2>Navigate</h2>

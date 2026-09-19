@@ -253,6 +253,42 @@ h1 {
   font-weight: 500;
 }
 
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-links a {
+  color: var(--muted);
+  transition: color 150ms ease;
+}
+
+.hero-links a:hover {
+  color: var(--fg);
+}
+
+.principles {
+  display: grid;
+  gap: 8px;
+}
+
+.principle h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.principle p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
 .socials {
   display: flex;
   gap: 8px;

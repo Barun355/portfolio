@@ -48,7 +48,7 @@
         <h1>One prompt, three models</h1>
         <p class="lede">I did not want a demo that only works when one vendor is up and in the mood.</p>
         <div class="article-meta">
-          <time datetime="2026-08-10">10 Aug 2026</time>
+          <time datetime="2026-07-22">22 Jul 2026</time>
           <button class="share" type="button" data-share>Share</button>
         </div>
 
@@ -62,16 +62,15 @@
         <p>The last model sees other outputs. That is useful and dangerous. Useful: it can drop a hallucinated name that only one provider invented. Dangerous: it can launder a bad claim if you treat the merge as ground truth.</p>
         <p>I treat the merge as a synthesis, not a verdict. The user still gets one answer. I do not pretend the answer is audited research.</p>
 
-        <h2>Why this is not “AI security” yet</h2>
-        <p>Prompt injection, tool-use abuse, and RAG leakage are things I am learning. This project is production-minded integration: keys, retries, concurrency, logs. Those are prerequisites. They are not a threat model.</p>
-        <p>If I put this in a security company interview, I will say that out loud. The proof is that I can ship a multi-provider path without turning it into a science fair.</p>
+        <h2>AI as an integration problem</h2>
+        <p>This is application engineering: keys, retries, concurrency, logs. The model is a dependency. The product still has to ship when one vendor is slow.</p>
       </article>
 
       <div class="wrap section">
         <h2>Related</h2>
         <div class="stack">
-          <a class="post" href="/blog/webhook-secrets/"><h3>Webhook secrets in a multi-tenant integration</h3><p>Another integration, different trust boundary.</p></a>
-          <a class="post" href="/blog/exposed-postgres/"><h3>Default Postgres credentials are an open door</h3><p>Delivery mistakes still beat clever prompts.</p></a>
+          <a class="post" href="/blog/recipe-reveal-nextjs/"><h3>SSR, SSG, and shipping Recipe Reveal</h3><p>Another full-stack ship.</p></a>
+          <a class="post" href="/blog/building-simple-form/"><h3>Building a form product from scratch</h3><p>Same ownership habit.</p></a>
         </div>
       </div>
     </main>
