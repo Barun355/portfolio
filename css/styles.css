@@ -5,6 +5,8 @@
   --border: #e2e2dc;
   --surface: #efefe9;
   --accent: #0f6e6a;
+  --selection: #0f6e6a;
+  --selection-fg: #f7f7f5;
   --success: #22865c;
   --header: 56px;
   --content: 42rem;
@@ -21,6 +23,8 @@
   --border: #2b2b27;
   --surface: #1b1b18;
   --accent: #4ecdc4;
+  --selection: #4ecdc4;
+  --selection-fg: #10100f;
   --success: #4ade80;
 }
 
@@ -28,6 +32,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--selection-fg);
+}
+
+::-moz-selection {
+  background: var(--selection);
+  color: var(--selection-fg);
 }
 
 html {
