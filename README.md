@@ -6,6 +6,7 @@ Static portfolio. HTML, CSS, Motion. No Next.js.
 
 - `/` Home
 - `/work/` Work log
+- `/security/` Security track
 - `/blog/` Writing
 - `/resume/` Resume
 

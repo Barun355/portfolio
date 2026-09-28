@@ -2,7 +2,7 @@
 
 > Private factual reference about Barun's background, experience, capabilities, and career direction.
 >
-> **Last updated:** 2026-09-14  
+> **Last updated:** 2026-09-28  
 > **Sources:** User-provided information, GitHub, and LinkedIn  
 > **Evidence:** ✅ verified · 📝 user-provided · ⚠️ confirmation needed
 
@@ -11,8 +11,8 @@
 ## Personal Information
 
 - **Name:** Barun Tiwary ✅
-- **Location:** India, IST (Asia/Kolkata) ✅
-- **Current role:** AI Software Engineer / Software Engineer at Radlabs, a startup 📝 ⚠️
+- **Location:** Bengaluru, India, IST (Asia/Kolkata) ✅
+- **Current role:** Full Stack Engineer / Project Lead at Rad Labs (Sep 2026 – Present) ✅
 - **Professional background:** AI application development, full-stack software engineering, backend systems, business automation, mobile applications, infrastructure, and connected devices
 - **Email:** baruntiwary620@gmail.com ✅
 - **Website:** https://baruntiwary.dev ✅
@@ -22,21 +22,20 @@
 
 ## Career Goal
 
-Barun's primary goal is to move from his current AI software engineering role into a cybersecurity company.
+Barun is a Full Stack Engineer transitioning into cybersecurity, specifically **red teaming**.
 
-The preferred near-term opportunities are:
+The preferred opportunities are:
 
-- Software engineering roles within cybersecurity companies
-- AI software engineering roles within cybersecurity companies
-- Security-focused software engineering roles
-- Application security roles, when supported by sufficient practical evidence
-- AI security roles involving secure LLM applications, agents, RAG systems, and data protection
+- Red team / offensive security roles (end goal)
+- Junior penetration tester or web/API pentester (stepping stone)
+- Application security tester
+- Software engineering roles at offensive-security companies (tooling, platforms, red-team infrastructure)
 
 The practical transition path is:
 
-**Software Engineering → AI Systems → Secure Software Engineering → Application Security / AI Security**
+**Full Stack Engineering → Secure Engineering → Offensive Security → Red Teaming**
 
-Current evidence is strongest for software and AI engineering roles in cybersecurity companies. Dedicated SOC, penetration-testing, and cybersecurity-analyst roles require additional security-specific proof.
+Current evidence is strongest for full-stack engineering with shipped security controls. Pentest and red-team roles need offensive proof: lab writeups, verified TryHackMe / Hack The Box progress, and certifications.
 
 ## Professional Focus
 
@@ -48,14 +47,41 @@ Current evidence is strongest for software and AI engineering roles in cybersecu
 
 ## Experience
 
-### Radlabs — AI Software Engineer / Software Engineer (Current) 📝 ⚠️
+Source: resume `AI_Barun_Tiwary_Resume.pdf` (latest, 2026-09-28).
 
-- Current startup employer and primary professional role
-- Works in AI and software engineering
-- Exact title, joining date, responsibilities, products, and measurable results need confirmation
-- Relationship between Radlabs and GitHub organization `RF-Automations` needs confirmation
+### Rad Labs — Full Stack Engineer / Project Lead (Sep 2026 – Present) ✅
+
+- Leads development of a healthcare mobile application from the ground up
+- Extends an existing backend used by web dashboards and production workflows
+- Builds production features across React Native / Expo, APIs, authentication, data flows, and backend services while keeping existing consumers compatible
+- Relationship between Rad Labs and GitHub organization `RF-Automations` needs confirmation
+
+### Consultifi Data — Full Stack Engineer (Feb 2026 – Jun 2026) ✅
+
+- Built production ERP workflows across frontend, backend services, databases, and device integrations
+- React / Electron, SQLite / PostgreSQL, REST APIs, QR-based workflows, real-time updates, and hardware integrations
+- Offline-first sync, station-token authentication, and plant-level isolation
+- Shown on the portfolio as the home of the ERP / Smart Weight work
+- Relationship to the Lunar Studio work below needs confirmation
+
+### SIA Health — Full Stack Developer (May 2025 – Oct 2025) ✅
+
+- Developed and maintained full-stack features across frontend interfaces, backend APIs, database workflows, and third-party integrations
+- Translated requirements into working features and investigated production issues
+- Earlier notes: meal-planning and quiz tools, built with Next.js, TypeScript, and React form workflows
+
+### Autonomous Work — Full Stack Developer (Jan 2025 – Mar 2025) ✅
+
+- Built web application features across frontend and backend layers, integrating APIs and database-driven workflows
+
+### Personal projects (ongoing) 📝
+
+- Simple Form, Custom OIDC provider, Recipe Reveal (https://recipereveal.in)
+- Open source: Mailchimp integration merged into `corsairdev/corsair` (PR #351, Jul 2026)
 
 ### Lunar Studio — Founding Engineer 📝 ✅
+
+- Not currently in the portfolio experience narrative
 
 - Small technology agency with a team of three
 - Work includes software development, AI solutions, automation, internal platforms, mobile applications, and IoT integrations
@@ -67,13 +93,6 @@ Notable systems:
 - Client-management platform with RBAC, sales pipelines, tasks, quotations, payments, projects, notifications, and activity history
 - Food-manufacturing ERP with receiving, inventory, stock ledgers, and production batches
 - Dental-clinic management application
-
-### SIA Health — Software Engineering Intern 📝 ✅
-
-- Contributed to healthcare software between June and October 2025
-- Worked on meal-planning and quiz tools
-- Used Next.js, TypeScript, and React-based form workflows
-- Exact title, dates, responsibilities, and outcomes need confirmation
 
 ## Core Engineering Experience
 
@@ -233,6 +252,14 @@ Ranks, badges, completed rooms, and practical reports need confirmation before b
 
 ### Intended Specializations
 
+#### Red Teaming (primary direction)
+
+- Adversary emulation against whole systems
+- Web and API exploitation
+- Linux and network attacks, privilege escalation
+- Reconnaissance and attack-path thinking
+- Self-assessments of own deployed systems
+
 #### Application Security
 
 - Secure API and backend design
@@ -284,6 +311,8 @@ Ranks, badges, completed rooms, and practical reports need confirmation before b
 
 ### Learning
 
+- Offensive security and red teaming
+- Web and API exploitation, Linux privilege escalation
 - Cybersecurity and application security
 - Cloud and infrastructure security
 - AI security
@@ -302,10 +331,8 @@ Ranks, badges, completed rooms, and practical reports need confirmation before b
 
 ## Information Requiring Confirmation
 
-1. Exact Radlabs title, joining date, responsibilities, products, and outcomes
 2. Relationship between Radlabs and `RF-Automations`
 3. Lunar Studio status, founding date, responsibilities, and overlap with current employment
-4. SIA Health title, dates, responsibilities, and outcomes
 5. Healthcare application name, stack, user count, responsibilities, and disclosure permission
 6. Client confidentiality rules for ERP and Smart Weight System
 7. Production metrics for deployed systems

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Security — Barun Tiwary</title>
+    <meta name="description" content="Full Stack Engineer moving into red teaming: the offensive track, lab work, shipped security controls, and honest boundaries." />
+    <link rel="canonical" href="https://baruntiwary.dev/security/" />
+    <meta property="og:title" content="Security — Barun Tiwary" />
+    <meta property="og:description" content="Full Stack Engineer moving into red teaming: the offensive track, lab work, shipped security controls, and honest boundaries." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://baruntiwary.dev/security/" />
+    <meta property="og:image" content="https://baruntiwary.dev/images/barun.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      const t = localStorage.getItem("theme")
+      if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/work/">Work</a>
+          <a href="/security/" aria-current="page">Security</a>
+          <a href="/blog/">Blog</a>
+          <a href="/resume/">Resume</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="icon-btn" data-search-open type="button" aria-label="Open blog search (Ctrl+K)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <span class="kbd">Ctrl K</span>
+          </button>
+          <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch to dark theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap">
+        <header class="page-intro reveal">
+          <h1>Security</h1>
+          <p>I’m a Full Stack Engineer moving into red teaming. This page separates what I’ve shipped, what I practice in labs, and what I’m still learning.</p>
+        </header>
+
+        <section class="record reveal" id="direction">
+          <h2>Direction</h2>
+          <p>I’ve built authentication flows, APIs, device networks, and deploys that real people use. That tells me where systems get misconfigured: default credentials, shared keys, unchecked callbacks, ports nobody meant to open.</p>
+          <p>The goal is red teaming, which means thinking like an adversary against whole systems. The path there runs through web and API exploitation, Linux and network attacks, and lab work I can show.</p>
+          <p class="muted">Full Stack Engineering → Secure Engineering → Offensive Security → Red Teaming</p>
+        </section>
+
+        <section class="record reveal" id="offensive">
+          <h2>Offensive track <span class="label">Learning</span></h2>
+          <ul>
+            <li>Networking fundamentals: how traffic moves, and where it can be intercepted or redirected.</li>
+            <li>Linux security and privilege escalation.</li>
+            <li>Web and API security: authentication, authorization, injection, and misconfiguration.</li>
+            <li>Vulnerability assessment and ethical-hacking methodology.</li>
+            <li>Hands-on practice on TryHackMe and Hack The Box.</li>
+          </ul>
+          <p class="muted">I’ll link profiles, completed paths, and certifications here once they can be verified. Until then, all of this is labelled as learning.</p>
+        </section>
+
+        <section class="record reveal" id="writeups">
+          <h2>Lab writeups <span class="label">Lab</span></h2>
+          <p>My first writeups are in progress. They cover retired machines and my own systems only, and they focus on methodology, not just flags.</p>
+          <p>The first one planned is a self-assessment: attacking my own Simple Form deploy the way the ransomware bot did, then going further.</p>
+        </section>
+
+        <section class="record reveal" id="shipped">
+          <h2>Seen from the builder’s side <span class="label">Shipped</span></h2>
+          <p>These are controls I’ve implemented in real systems, each paired with what an attacker would try against it.</p>
+          <div class="stack">
+            <div class="system">
+              <h3>Station tokens and plant isolation</h3>
+              <p>Each factory device has its own token, and the server maps it to a single plant.</p>
+              <p class="attack">An attacker would try cloning a device image, stealing a token, or replaying offline events.</p>
+            </div>
+            <div class="system">
+              <h3>Webhook-secret validation and tenant routing</h3>
+              <p>Callbacks are checked for the sender’s secret before any parsing or routing.</p>
+              <p class="attack">An attacker would try forged POSTs to the callback URL, or pushing one tenant’s events into another’s.</p>
+            </div>
+            <div class="system">
+              <h3>OAuth 2.0, OIDC, JWT, and API keys</h3>
+              <p>Used across integrations and apps, and built from scratch in an experimental OIDC provider.</p>
+              <p class="attack">An attacker would try redirect URI manipulation, token leakage, or a missing state or nonce check.</p>
+            </div>
+            <div class="system">
+              <h3>RBAC, rate limiting, and honeypots</h3>
+              <p>Role-based access in operational systems. Rate limits and a honeypot field on public form submissions.</p>
+              <p class="attack">An attacker would try horizontal privilege escalation, credential stuffing, or automated spam.</p>
+            </div>
+            <div class="system">
+              <h3>Loopback-only databases and real secrets</h3>
+              <p>The database is reachable only from the app on the same machine, and credentials are real secrets.</p>
+              <p class="attack">This is the exact door that was open before the incident below.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="record reveal" id="incident">
+          <h2>The incident</h2>
+          <p>Simple Form’s PostgreSQL instance was reachable from the internet with default-style credentials. A ransomware bot scanned for the port, logged in, and held the data as leverage. It didn’t need an exploit.</p>
+          <p>From the attacker’s side it was cheap: mass scanning, a short credential list, automated ransom. That’s what made it land for me. Most real compromises go through the boring door.</p>
+          <p><a href="/blog/exposed-postgres/">Read the full write-up</a></p>
+        </section>
+
+        <section class="record reveal" id="boundaries">
+          <h2>Boundaries</h2>
+          <ul>
+            <li>No professional red-team or penetration-testing engagements yet.</li>
+            <li>No CVEs, bug bounties, or certifications to claim yet.</li>
+            <li>All offensive work stays on my own systems, retired lab machines, or permitted CTFs.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <blockquote class="quote">Defaults and misconfigurations are the real entry points.</blockquote>
+        <div class="footer-cols">
+          <div>
+            <h2>Navigate</h2>
+            <a href="/">Home</a>
+            <a href="/work/">Work</a>
+            <a href="/security/">Security</a>
+            <a href="/blog/">Blog</a>
+            <a href="/resume/">Resume</a>
+          </div>
+          <div>
+            <h2>Connect</h2>
+            <a href="mailto:baruntiwary620@gmail.com">Email</a>
+            <a href="https://github.com/Barun355">GitHub</a>
+            <a href="https://linkedin.com/in/barun-tiwary">LinkedIn</a>
+            <a href="https://x.com/21me60">X</a>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Barun Tiwary</p>
+      </div>
+    </footer>
+    <script type="module" src="/js/site.js"></script>
+  </body>
+</html>

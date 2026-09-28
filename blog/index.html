@@ -4,8 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blog — Barun Tiwary</title>
-    <meta name="description" content="Notes on production software, APIs, data, and systems." />
+    <meta name="description" content="Building systems, then learning how they break. Notes on security, red teaming, and production engineering." />
     <link rel="canonical" href="https://baruntiwary.dev/blog/" />
+    <meta property="og:title" content="Blog — Barun Tiwary" />
+    <meta property="og:description" content="Building systems, then learning how they break. Notes on security, red teaming, and production engineering." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://baruntiwary.dev/blog/" />
+    <meta property="og:image" content="https://baruntiwary.dev/images/barun.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -27,6 +32,7 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="/">Home</a>
           <a href="/work/">Work</a>
+          <a href="/security/">Security</a>
           <a href="/blog/" aria-current="page">Blog</a>
           <a href="/resume/">Resume</a>
         </nav>
@@ -46,17 +52,52 @@
       <div class="wrap">
         <header class="page-intro reveal">
           <h1>Blog</h1>
-          <p>Notes from systems I shipped: APIs, data, rendering, and production.</p>
+          <p>Building systems, then learning how they break.</p>
         </header>
 
         <div class="filters reveal" role="group" aria-label="Filter writing">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">All 4</button>
-          <button class="filter" type="button" data-filter="Engineering" aria-pressed="false">Engineering 3</button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All 7</button>
+          <button class="filter" type="button" data-filter="Red Team" aria-pressed="false">Red Team 1</button>
+          <button class="filter" type="button" data-filter="Security" aria-pressed="false">Security 3</button>
+          <button class="filter" type="button" data-filter="Engineering" aria-pressed="false">Engineering 6</button>
           <button class="filter" type="button" data-filter="Systems" aria-pressed="false">Systems 1</button>
           <button class="filter" type="button" data-filter="AI" aria-pressed="false">AI 1</button>
         </div>
 
         <div class="stack" data-stagger>
+          <a class="post" href="/blog/exposed-postgres/" data-tags="Security,Red Team">
+            <div class="post-top">
+              <h3>Default Postgres credentials are an open door</h3>
+              <span class="row-meta">26 Sep 2026</span>
+            </div>
+            <p>A ransomware bot found a public database. How the attack worked, and what changed after.</p>
+            <div class="post-foot">
+              <span class="tags"><span class="tag">Security</span><span class="tag">Red Team</span></span>
+              <span>Read more</span>
+            </div>
+          </a>
+          <a class="post" href="/blog/station-tokens/" data-tags="Security,Engineering">
+            <div class="post-top">
+              <h3>Station tokens and plant isolation</h3>
+              <span class="row-meta">24 Sep 2026</span>
+            </div>
+            <p>How factory devices prove who they are, and how an attacker would try to fake it.</p>
+            <div class="post-foot">
+              <span class="tags"><span class="tag">Security</span><span class="tag">Engineering</span></span>
+              <span>Read more</span>
+            </div>
+          </a>
+          <a class="post" href="/blog/webhook-secrets/" data-tags="Security,Engineering">
+            <div class="post-top">
+              <h3>Webhook secrets in a multi-tenant integration</h3>
+              <span class="row-meta">21 Sep 2026</span>
+            </div>
+            <p>Forged callbacks and tenant confusion, and the checks that stop them.</p>
+            <div class="post-foot">
+              <span class="tags"><span class="tag">Security</span><span class="tag">Engineering</span></span>
+              <span>Read more</span>
+            </div>
+          </a>
           <a class="post" href="/blog/offline-first-erp/" data-tags="Systems,Engineering">
             <div class="post-top">
               <h3>Offline-first data on a factory floor</h3>
@@ -113,6 +154,7 @@
             <h2>Navigate</h2>
             <a href="/">Home</a>
             <a href="/work/">Work</a>
+            <a href="/security/">Security</a>
             <a href="/blog/">Blog</a>
             <a href="/resume/">Resume</a>
           </div>

@@ -10,6 +10,7 @@ Stack for this build: static HTML, CSS, Motion (vanilla). No Next.js.
 
 - Home `/`
 - Work log `/work`
+- Security `/security`
 - Blog `/blog` + articles
 - Resume `/resume`
 - 404
@@ -28,7 +29,7 @@ Stack for this build: static HTML, CSS, Motion (vanilla). No Next.js.
 - Resume PDF
 - Comments
 - RSS
-- Security writing (optional, not identity)
+- Red-team lab writeups (need real lab work first)
 
 ## Build list
 
@@ -44,17 +45,20 @@ Stack for this build: static HTML, CSS, Motion (vanilla). No Next.js.
 | 404 | Done |
 | `robots.txt` + `sitemap.xml` (no RSS) | Done |
 | `/projects` case studies | Not started |
-| `/security` page | Not started |
+| `/security` page | Done (2026-09-28) |
+| Identity migration: Full Stack → Red Team | Done (2026-09-28) |
+| Experience timeline from latest resume + Achievements section | Done (2026-09-28) |
 | Resume PDF | Not started |
 
 ## Home hierarchy
 
-1. Hero — Full Stack Engineer
-2. Selected work
+1. Hero — Full Stack Engineer · transitioning to Red Teaming
+2. Selected work (each with a "where it could break" line)
 3. Experience (Rad Labs, Consultifi Data, SIA Health, Autonomous Work)
-4. Engineering principles
-5. Writing
-6. Footer
+4. Achievements (open source)
+5. Principles
+6. Writing (Security / Red Team first)
+7. Footer
 
 ## Research docs
 

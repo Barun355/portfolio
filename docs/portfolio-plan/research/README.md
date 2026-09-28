@@ -2,7 +2,7 @@
 
 Reference audited: https://ramx.in  
 Audit date: 2026-09-14  
-Purpose: extract reusable portfolio patterns for Barun Tiwary's AI/software-to-cybersecurity positioning.
+Purpose: extract reusable portfolio patterns for Barun Tiwary's full-stack-to-red-team positioning.
 
 ## Scope
 
@@ -46,4 +46,4 @@ Live Barun IA and build list: [../README.md](../README.md) and [information-arch
 
 ## Main conclusion
 
-Ramx succeeds through restraint: one narrow content column, clear type hierarchy, text-first lists, light interaction, and strong writing support. Its best reusable ideas are the compact home summary, command search, minimal project index, expandable experience rows, article reading system, theme support, and consistent footer. Barun's version should preserve this clarity while replacing personal lifestyle content with secure-system case studies and stronger cybersecurity proof.
+Ramx succeeds through restraint: one narrow content column, clear type hierarchy, text-first lists, light interaction, and strong writing support. Its best reusable ideas are the compact home summary, command search, minimal project index, expandable experience rows, article reading system, theme support, and consistent footer. Barun's version should preserve this clarity while replacing personal lifestyle content with shipped systems, their attack surfaces, and honest offensive-security proof.

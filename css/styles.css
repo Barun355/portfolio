@@ -188,6 +188,17 @@ a:hover {
   }
 }
 
+@media (max-width: 400px) {
+  .nav-links {
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .icon-btn {
+    padding: 0 6px;
+  }
+}
+
 main {
   padding: 32px 0 80px;
 }
@@ -548,6 +559,58 @@ a.post:hover,
   font-weight: 600;
 }
 
+.record a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.record .stack {
+  margin-top: 12px;
+}
+
+.record .system h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--fg);
+}
+
+.label {
+  display: inline-block;
+  padding: 1px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  vertical-align: 2px;
+}
+
+h2 .label {
+  margin-left: 8px;
+}
+
+.system p.attack {
+  margin-top: 6px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.system p.attack a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tagline {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
 .tech {
   display: flex;
   flex-wrap: wrap;
@@ -739,6 +802,11 @@ a.post:hover,
 .resume ul {
   margin: 0;
   padding-left: 18px;
+}
+
+.resume li a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .resume-name {
