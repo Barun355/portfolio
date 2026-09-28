@@ -4,8 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Work — Barun Tiwary</title>
-    <meta name="description" content="Work log: Rad Labs, Consultifi Data, SIA Health, and autonomous product work." />
+    <meta name="description" content="What I built at Rad Labs, Consultifi Data, SIA Health, and on my own — and where each system could be attacked." />
     <link rel="canonical" href="https://baruntiwary.dev/work/" />
+    <meta property="og:title" content="Work — Barun Tiwary" />
+    <meta property="og:description" content="What I built at Rad Labs, Consultifi Data, SIA Health, and on my own — and where each system could be attacked." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://baruntiwary.dev/work/" />
+    <meta property="og:image" content="https://baruntiwary.dev/images/barun.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -27,6 +32,7 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="/">Home</a>
           <a href="/work/" aria-current="page">Work</a>
+          <a href="/security/">Security</a>
           <a href="/blog/">Blog</a>
           <a href="/resume/">Resume</a>
         </nav>
@@ -46,86 +52,112 @@
       <div class="wrap">
         <header class="page-intro reveal">
           <h1>Work</h1>
-          <p>What I owned, what I built, and which systems had to work together. Tools come after the problem.</p>
+          <p>What I built and owned, and where an attacker would push on it. The engineering is the proof. The attack surface is where I’m heading.</p>
         </header>
 
-        <article class="record reveal">
+        <article class="record reveal" id="radlabs">
           <div class="exp-top">
             <h2>Rad Labs <span class="badge"><i></i>Working</span></h2>
-            <span class="exp-meta">Present · India</span>
+            <span class="exp-meta">Sep 2026 – Present</span>
           </div>
-          <p class="muted">Software Engineer</p>
+          <p class="muted">Full Stack Engineer / Project Lead</p>
           <h3>Problem</h3>
-          <p>A startup needed production product software — features that go from requirement to a running system, not throwaway prototypes.</p>
-          <h3>What I build</h3>
+          <p>A healthcare product needed a mobile app built from the ground up, on top of a backend that web dashboards and production workflows already depend on.</p>
+          <h3>What I build and own</h3>
           <ul>
-            <li>Own feature work across the UI, API, and data path.</li>
-            <li>Ship, debug, and improve after release.</li>
-            <li>Use AI integrations when the product needs them, not as the whole story.</li>
+            <li>Lead development of the healthcare mobile application.</li>
+            <li>Build and integrate production features across React Native / Expo, APIs, authentication, data flows, and backend services.</li>
+            <li>Extend the existing backend while keeping it compatible with its current consumers.</li>
           </ul>
-          <h3>Systems</h3>
-          <p>TypeScript, React, Next.js, Node.js, PostgreSQL, REST APIs. Public product names stay conservative until confirmed.</p>
+          <h3>Attack surface</h3>
+          <p>Patient data on a mobile device, authentication between the app and the API, and a shared backend where one change can affect every client.</p>
         </article>
 
-        <article class="record reveal">
+        <article class="record reveal" id="consultifi">
           <div class="exp-top">
             <h2>Consultifi Data</h2>
-            <span class="exp-meta">India</span>
+            <span class="exp-meta">Feb 2026 – Jun 2026</span>
           </div>
-          <p class="muted">Production operational systems</p>
+          <p class="muted">Full Stack Engineer</p>
           <h3>Problem</h3>
-          <p>Client operations needed software that matched real floor and office workflows: inventory, production, dispatch, and devices that keep working when the network drops.</p>
-          <h3>What I built</h3>
+          <p>Manufacturing operations needed software that matched real floor and office workflows: inventory, production, dispatch, and devices that keep working when the network drops.</p>
+          <h3>What I built and owned</h3>
           <ul>
-            <li>A production-oriented ERP around multi-stage business workflows and relational data.</li>
-            <li>Offline-first behavior, synchronization, QR workflows, and hardware integrations.</li>
-            <li>Took requirements through architecture, implementation, and handoff.</li>
+            <li>Production ERP workflows across frontend, backend services, databases, and device integrations.</li>
+            <li>React / Electron apps, SQLite / PostgreSQL, REST APIs, QR-based workflows, and real-time updates.</li>
+            <li>Connected stations: USB scales, thermal printers, QR identities, and Raspberry Pi services, with offline-first sync, retries, and idempotent writes.</li>
           </ul>
-          <h3>What mattered</h3>
-          <p>The hard part was the data flow between stations, APIs, and the database — not a single screen. Client identities stay confidential.</p>
+          <h3>Attack surface</h3>
+          <p>Physical devices on a factory floor, the tokens they carry, the sync queue that replays events, and the boundary between plants.</p>
+          <h3>Controls</h3>
+          <ul>
+            <li>A token per station instead of one shared key, mapped server-side to a single plant.</li>
+            <li>401 for unknown callers and 403 for the wrong plant.</li>
+            <li>An event id in the data model, so a replayed event can’t double-count stock.</li>
+          </ul>
+          <h3>Result</h3>
+          <p>Operations keep moving when the network drops, and one compromised box doesn’t speak for the whole factory. Client identities stay confidential.</p>
         </article>
 
-        <article class="record reveal">
+        <article class="record reveal" id="sia">
           <div class="exp-top">
             <h2>SIA Health</h2>
-            <span class="exp-meta">Jun 2025 – Oct 2025</span>
+            <span class="exp-meta">May 2025 – Oct 2025</span>
           </div>
-          <p class="muted">Software Engineering Intern</p>
+          <p class="muted">Full Stack Developer</p>
           <h3>Problem</h3>
-          <p>Healthcare tools needed form-heavy web workflows that fit an existing product.</p>
+          <p>A healthcare product needed new features built and maintained across the whole stack, inside an existing codebase.</p>
           <h3>What I built</h3>
           <ul>
-            <li>Meal-planning and quiz features in Next.js and TypeScript.</li>
-            <li>Worked inside an existing codebase instead of starting from zero.</li>
+            <li>Full-stack features across frontend interfaces, backend APIs, database workflows, and third-party integrations.</li>
+            <li>Turned requirements into working features and investigated production issues.</li>
+          </ul>
+          <h3>Attack surface</h3>
+          <p>User-supplied input in health-related forms, third-party integrations, and how data is validated before it’s stored.</p>
+        </article>
+
+        <article class="record reveal" id="autonomous">
+          <div class="exp-top">
+            <h2>Autonomous Work</h2>
+            <span class="exp-meta">Jan 2025 – Mar 2025</span>
+          </div>
+          <p class="muted">Full Stack Developer</p>
+          <h3>What I built</h3>
+          <ul>
+            <li>Web application features across frontend and backend layers, integrating APIs and database-driven workflows.</li>
           </ul>
         </article>
 
-        <article class="record reveal">
+        <article class="record reveal" id="projects">
           <div class="exp-top">
-            <h2>Autonomous Work</h2>
+            <h2>Personal projects</h2>
             <span class="exp-meta">Ongoing</span>
           </div>
-          <p class="muted">Self-directed products</p>
-          <h3>Problem</h3>
-          <p>The fastest way I learn a system is to own it end to end.</p>
+          <p class="muted">Products I owned end to end</p>
           <h3>What I built</h3>
           <ul>
-            <li><strong>Simple Form</strong> — form builder, validation, submissions, analytics.</li>
-            <li><strong>Recipe Reveal</strong> — Next.js full-stack app with SSR / SSG, then deployed.</li>
-            <li>Other small products used to practice APIs, databases, and production deploys.</li>
+            <li><strong>Simple Form</strong>: a form builder with public submissions, analytics, exports, and embeds, plus rate limiting and a honeypot on the public path.</li>
+            <li><strong>Custom OIDC provider</strong>: an experimental OpenID Connect provider built with Bun.</li>
+            <li><strong>Recipe Reveal</strong>: a full-stack Next.js app using SSR and SSG, deployed to production.</li>
           </ul>
+          <h3>Attack surface</h3>
+          <p>A public database port, and the redirect and token handling in an identity flow.</p>
+          <p class="muted">Open-source work is listed under <a href="/#achievements">Achievements</a> on Home.</p>
+          <h3>Result</h3>
+          <p>A ransomware bot got into Simple Form’s Postgres through default credentials. I moved the database to loopback-only with real secrets. That incident is a big part of why I’m moving into offensive security.</p>
         </article>
       </div>
     </main>
 
     <footer class="site-footer">
       <div class="wrap">
-        <blockquote class="quote">Results before tool lists.</blockquote>
+        <blockquote class="quote">Every trust boundary is an attack surface.</blockquote>
         <div class="footer-cols">
           <div>
             <h2>Navigate</h2>
             <a href="/">Home</a>
             <a href="/work/">Work</a>
+            <a href="/security/">Security</a>
             <a href="/blog/">Blog</a>
             <a href="/resume/">Resume</a>
           </div>

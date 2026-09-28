@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SSR, SSG, and shipping Recipe Reveal — Barun Tiwary</title>
-    <meta name="description" content="A Next.js app is a rendering decision plus a production deploy." />
-    <link rel="canonical" href="https://baruntiwary.dev/blog/recipe-reveal-nextjs/" />
-    <meta property="og:title" content="SSR, SSG, and shipping Recipe Reveal — Barun Tiwary" />
-    <meta property="og:description" content="A Next.js app is a rendering decision plus a production deploy." />
+    <title>Webhook secrets in a multi-tenant integration — Barun Tiwary</title>
+    <meta name="description" content="Forged callbacks and tenant confusion, and the checks that stop them." />
+    <link rel="canonical" href="https://baruntiwary.dev/blog/webhook-secrets/" />
+    <meta property="og:title" content="Webhook secrets in a multi-tenant integration — Barun Tiwary" />
+    <meta property="og:description" content="Forged callbacks and tenant confusion, and the checks that stop them." />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://baruntiwary.dev/blog/recipe-reveal-nextjs/" />
+    <meta property="og:url" content="https://baruntiwary.dev/blog/webhook-secrets/" />
     <meta property="og:image" content="https://baruntiwary.dev/images/barun.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
@@ -28,10 +28,10 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "SSR, SSG, and shipping Recipe Reveal",
-      "description": "A Next.js app is a rendering decision plus a production deploy.",
-      "datePublished": "2026-08-10",
-      "url": "https://baruntiwary.dev/blog/recipe-reveal-nextjs/",
+      "headline": "Webhook secrets in a multi-tenant integration",
+      "description": "Forged callbacks and tenant confusion, and the checks that stop them.",
+      "datePublished": "2026-09-21",
+      "url": "https://baruntiwary.dev/blog/webhook-secrets/",
       "image": "https://baruntiwary.dev/images/barun.png",
       "author": {
         "@type": "Person",
@@ -67,32 +67,44 @@
     <main id="main">
       <article class="wrap article">
         <a class="back" href="/blog/">Back to Blog</a>
-        <p class="muted">Engineering</p>
-        <h1>SSR, SSG, and shipping Recipe Reveal</h1>
-        <p class="lede">Next.js is useful when you pick a render path on purpose, then actually deploy it.</p>
+        <p class="muted">Security · Engineering</p>
+        <h1>Webhook secrets in a multi-tenant integration</h1>
+        <p class="lede">A callback URL is a public door. The secret is the lock. The tenant id is which room you may enter.</p>
         <div class="article-meta">
-          <time datetime="2026-08-10">10 Aug 2026</time>
+          <time datetime="2026-09-21">21 Sep 2026</time>
           <button class="share" type="button" data-share>Share</button>
         </div>
 
-        <p>Recipe Reveal is a full-stack Next.js app. I used it to practice the parts that show up in real product work: routing, data fetching, rendering, and a production deploy — not a localhost-only demo.</p>
+        <p>I merged a Mailchimp Marketing integration into <code>corsairdev/corsair</code>. Fifty-six endpoints. Four webhook triggers. OAuth 2.0 and API-key auth. Fifty-six unit tests and guarded integration tests. The PR is public: <a href="https://github.com/corsairdev/corsair/pull/351">#351</a>.</p>
+        <p>The security-relevant part is not the endpoint count. It is what happens when Mailchimp calls you back.</p>
 
-        <h2>SSR vs SSG is a product choice</h2>
-        <p>Static generation is right when the page can be built ahead of time. Server rendering is right when the data is request-specific. Mixing them without a reason makes the app slower and harder to reason about.</p>
+        <h2>Anyone can POST your webhook URL</h2>
+        <p>If you accept the body because the path looks right, you have built an unauthenticated write API. Signature or secret checks come first. Then you parse. Then you route.</p>
 
-        <h2>The stack is not the story</h2>
-        <p>React and Next.js were tools. The work was: model the pages, fetch the data, keep the HTML useful, and put the app where people can hit it.</p>
+        <h2>Tenants do not share a hallway</h2>
+        <p>Multi-tenant routing means the event for workspace A cannot land in workspace B’s automations. The secret proves Mailchimp sent it. The tenant mapping proves which customer owns the list. Mix those up and you have a quiet data leak.</p>
 
-        <h2>Ship is the last step of the feature</h2>
-        <p>A rendering strategy that never leaves your machine is a sketch. Deployment, env, and a URL close the loop.</p>
-        <p>This sits as supporting proof: I can take a Next.js app from architecture to production. The heavier systems proof lives in the ERP and Reconnect work.</p>
+        <h2>Tests that block the merge</h2>
+        <p>Unit tests cover the dull cases: bad secret, missing header, unknown tenant. Integration tests stay guarded so CI does not need live Mailchimp on every push. That is enough to keep a regression from shipping as “just a mapping change.”</p>
+
+        <blockquote>A webhook without a secret is a public function with side effects.</blockquote>
+
+        <h2>How I’d attack it</h2>
+        <ul>
+          <li><strong>Forge the callback.</strong> Webhook URLs leak through logs, docs, and browser history. POST a crafted body and see whether the handler acts on it. The secret check is what makes this fail.</li>
+          <li><strong>Confuse the tenant.</strong> Send a validly signed event but change the list or account id, and see whether it lands in someone else’s automations.</li>
+          <li><strong>Probe the error path.</strong> Verbose errors on a bad signature can tell an attacker which part of the check failed.</li>
+        </ul>
+
+        <h2>Where this sits</h2>
+        <p>This is secure API hygiene on an open-source integration. It’s evidence I think about auth, secrets, and tenant boundaries, and it’s the kind of surface I now look at from the attacker’s side.</p>
       </article>
 
       <div class="wrap section">
         <h2>Related</h2>
         <div class="stack">
-          <a class="post" href="/blog/building-simple-form/"><h3>Building a form product from scratch</h3><p>Another app owned end to end.</p></a>
-          <a class="post" href="/blog/multi-provider-llm/"><h3>One prompt, three models</h3><p>AI as an integration problem.</p></a>
+          <a class="post" href="/blog/station-tokens/"><h3>Station tokens and plant isolation</h3><p>Same isolation idea, factory devices.</p></a>
+          <a class="post" href="/blog/multi-provider-llm/"><h3>One prompt, three models</h3><p>Another integration surface.</p></a>
         </div>
       </div>
     </main>
@@ -104,7 +116,7 @@
 
     <footer class="site-footer">
       <div class="wrap">
-        <blockquote class="quote">Ship is part of the feature.</blockquote>
+        <blockquote class="quote">Prove the sender. Then route the event.</blockquote>
         <div class="footer-cols">
           <div>
             <h2>Navigate</h2>

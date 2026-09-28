@@ -4,8 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Resume — Barun Tiwary</title>
-    <meta name="description" content="Resume for Barun Tiwary, Full Stack Engineer." />
+    <meta name="description" content="Resume for Barun Tiwary, Full Stack Engineer transitioning to red teaming." />
     <link rel="canonical" href="https://baruntiwary.dev/resume/" />
+    <meta property="og:title" content="Resume — Barun Tiwary" />
+    <meta property="og:description" content="Resume for Barun Tiwary, Full Stack Engineer transitioning to red teaming." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://baruntiwary.dev/resume/" />
+    <meta property="og:image" content="https://baruntiwary.dev/images/barun.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -27,6 +32,7 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="/">Home</a>
           <a href="/work/">Work</a>
+          <a href="/security/">Security</a>
           <a href="/blog/">Blog</a>
           <a href="/resume/" aria-current="page">Resume</a>
         </nav>
@@ -46,14 +52,14 @@
       <div class="wrap">
         <header class="page-intro reveal">
           <h1>Resume</h1>
-          <p>Print this page for a PDF.</p>
+          <p class="muted">Print this page to save it as a PDF.</p>
         </header>
 
         <article class="resume reveal">
           <div class="resume-top">
             <div>
               <p class="resume-name">Barun Tiwary</p>
-              <p>Full Stack Engineer building production-ready software and systems.</p>
+              <p>Full Stack Engineer · transitioning to Red Teaming</p>
             </div>
             <div class="resume-links">
               <a href="mailto:baruntiwary620@gmail.com">baruntiwary620@gmail.com</a>
@@ -65,58 +71,60 @@
           </div>
 
           <h2>Summary</h2>
-          <p>Hands-on full-stack engineer. I work across frontend, backend, APIs, and databases, take ownership of features, and ship to production. I care more about understanding the system than being tied to one language. Currently learning Go.</p>
+          <p>Full Stack Engineer who has shipped production systems across the frontend, APIs, databases, connected devices, and deploys. I dealt with a real attack on my own infrastructure and hardened it afterwards. Now I’m building offensive-security skills toward red teaming, with every item labelled as shipped, lab, or learning.</p>
 
           <h2>Experience</h2>
-          <h3>Rad Labs — Software Engineer</h3>
-          <p class="muted">Present · India</p>
+          <h3>Rad Labs — Full Stack Engineer / Project Lead</h3>
+          <p class="muted">Sep 2026 – Present</p>
           <ul>
-            <li>Ship production features across UI, APIs, and data.</li>
-            <li>Debug and improve systems after they are live.</li>
+            <li>Lead development of a healthcare mobile application from the ground up while extending an existing backend used by web dashboards and production workflows.</li>
+            <li>Build and integrate production features across React Native / Expo, APIs, authentication, data flows, and backend services while keeping existing consumers compatible.</li>
           </ul>
-          <h3>Consultifi Data</h3>
-          <p class="muted">India</p>
+          <h3>Consultifi Data — Full Stack Engineer</h3>
+          <p class="muted">Feb 2026 – Jun 2026</p>
           <ul>
-            <li>Built production ERP workflows: inventory, production, dispatch, QR, hardware integrations.</li>
-            <li>Designed around offline-first sync and relational data. Client names confidential.</li>
+            <li>Built production ERP workflows across frontend, backend services, databases, and device integrations with React / Electron, SQLite / PostgreSQL, REST APIs, QR-based workflows, real-time updates, and hardware integrations.</li>
+            <li>Designed station-token authentication, plant-level isolation, and idempotent offline sync. Client names are confidential.</li>
           </ul>
-          <h3>SIA Health — Software Engineering Intern</h3>
-          <p class="muted">Jun 2025 – Oct 2025</p>
+          <h3>SIA Health — Full Stack Developer</h3>
+          <p class="muted">May 2025 – Oct 2025</p>
           <ul>
-            <li>Meal-planning and quiz tools in an existing healthcare product.</li>
-            <li>Next.js, TypeScript, React form workflows.</li>
+            <li>Developed and maintained full-stack features across frontend interfaces, backend APIs, database workflows, and third-party integrations; translated requirements into working features and investigated production issues.</li>
           </ul>
-          <h3>Autonomous Work</h3>
-          <p class="muted">Ongoing</p>
+          <h3>Autonomous Work — Full Stack Developer</h3>
+          <p class="muted">Jan 2025 – Mar 2025</p>
           <ul>
-            <li>Simple Form — form builder, validation, submissions, analytics.</li>
-            <li>Recipe Reveal — Next.js SSR / SSG, full-stack, deployed.</li>
+            <li>Built web application features across frontend and backend layers, integrating APIs and database-driven workflows.</li>
           </ul>
 
-          <h2>Selected work</h2>
+          <h2>Personal projects</h2>
           <ul>
-            <li><strong>Smart ERP System</strong> — operational workflows, relational data, offline sync, device integrations.</li>
-            <li><strong>Reconnect</strong> — React Native / Expo features on an existing backend and auth path.</li>
-            <li><strong>Simple Form</strong> — product from scratch: fields, APIs, responses, analytics.</li>
-            <li><strong>Recipe Reveal</strong> — Next.js application and production deploy.</li>
+            <li>Simple Form: a form builder with rate limiting and a honeypot. Hardened to loopback-only Postgres after a ransomware bot got in.</li>
+            <li>Custom OIDC provider (Bun) and Recipe Reveal (Next.js SSR / SSG).</li>
+          </ul>
+
+          <h2>Achievements</h2>
+          <ul>
+            <li><strong>Open source, Corsair:</strong> merged Mailchimp integration (<a href="https://github.com/corsairdev/corsair/pull/351">PR #351</a>, Jul 2026). 56 API endpoints, 4 webhook triggers, OAuth 2.0 and API keys, webhook-secret validation, multi-tenant routing, 56 unit tests.</li>
           </ul>
 
           <h2>Skills</h2>
-          <p><strong>Strong:</strong> TypeScript, JavaScript, SQL, React, Next.js, Node.js, REST APIs, PostgreSQL, Prisma, Git.</p>
-          <p><strong>Used:</strong> React Native, MongoDB, Docker, production deploys, hardware and service integrations.</p>
-          <p><strong>Learning:</strong> Go.</p>
+          <p><strong>Engineering (shipped):</strong> TypeScript, JavaScript, Node.js, React, Next.js, PostgreSQL, SQL, REST APIs, Docker, Linux, Git.</p>
+          <p><strong>Security (shipped):</strong> OAuth 2.0, OIDC, JWT, API keys, RBAC, webhook-secret validation, rate limiting, secrets handling, server hardening.</p>
+          <p><strong>Offensive (learning):</strong> networking, Linux privilege escalation, web and API exploitation, vulnerability assessment, TryHackMe, Hack The Box.</p>
         </article>
       </div>
     </main>
 
     <footer class="site-footer">
       <div class="wrap">
-        <blockquote class="quote">Print works. A separate PDF can land later.</blockquote>
+        <blockquote class="quote">Shipped, practiced in labs, or learning. Always labelled.</blockquote>
         <div class="footer-cols">
           <div>
             <h2>Navigate</h2>
             <a href="/">Home</a>
             <a href="/work/">Work</a>
+            <a href="/security/">Security</a>
             <a href="/blog/">Blog</a>
             <a href="/resume/">Resume</a>
           </div>

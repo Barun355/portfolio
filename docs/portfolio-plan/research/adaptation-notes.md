@@ -4,9 +4,9 @@
 
 Barun should be presented as:
 
-**Software and AI engineer building secure production systems, targeting engineering roles in cybersecurity companies.**
+**Full Stack Engineer transitioning to cybersecurity, specifically red teaming.** (Updated 2026-09-28; the live IA is [information-architecture.md](information-architecture.md).)
 
-The portfolio must prove existing engineering depth while making the security direction credible. It should not claim mature SOC, penetration-testing, or AppSec experience without evidence.
+The portfolio must prove existing engineering depth while making the red-team direction credible. It should not claim professional penetration-testing or red-team experience without evidence.
 
 ## Keep from Ramx
 
@@ -189,13 +189,13 @@ Preserve Ramx’s neutral foundation, then add one security/AI accent:
 - Diagrams include text summaries.
 - Motion disabled through `prefers-reduced-motion`.
 
-## Locked 2026-09-19
+## Locked 2026-09-28
 
-Header is Home · Work · Blog · Resume. No Security or Writing label in nav.
+Header is Home · Work · Security · Blog · Resume.
 
 Removed from the site: Terminal, Setup, Movies, Gears, RSS, Books.
 
-Projects and a security page stay off-route for this build. Selected systems sit on Home. Security proof sits inside Work, systems, and writing.
+`/security` is on-route and holds the offensive track, lab writeups, shipped controls, and boundaries. Projects stay off-route; selected systems sit on Home with a "where it could break" line.
 
 Stack is HTML, CSS, and Motion. Next.js is out.
 

@@ -2,6 +2,27 @@ import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@12
 
 const POSTS = [
   {
+    title: "Default Postgres credentials are an open door",
+    url: "/blog/exposed-postgres/",
+    tags: ["Security", "Red Team"],
+    date: "2026-09-26",
+    summary: "A ransomware bot found a public database. How the attack worked, and what changed after.",
+  },
+  {
+    title: "Station tokens and plant isolation",
+    url: "/blog/station-tokens/",
+    tags: ["Security", "Engineering"],
+    date: "2026-09-24",
+    summary: "How factory devices prove who they are, and how an attacker would try to fake it.",
+  },
+  {
+    title: "Webhook secrets in a multi-tenant integration",
+    url: "/blog/webhook-secrets/",
+    tags: ["Security", "Engineering"],
+    date: "2026-09-21",
+    summary: "Forged callbacks and tenant confusion, and the checks that stop them.",
+  },
+  {
     title: "Offline-first data on a factory floor",
     url: "/blog/offline-first-erp/",
     tags: ["Systems", "Engineering"],

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Barun Tiwary — Full Stack Engineer</title>
-    <meta name="description" content="Full Stack Engineer building production-ready software, APIs, and data-driven systems." />
+    <title>Barun Tiwary — Full Stack Engineer → Red Team</title>
+    <meta name="description" content="Full Stack Engineer transitioning into cybersecurity and red teaming. Builds production systems, now learning to break them." />
     <link rel="canonical" href="https://baruntiwary.dev/" />
-    <meta property="og:title" content="Barun Tiwary — Full Stack Engineer" />
-    <meta property="og:description" content="Applications, APIs, and data-driven systems across the stack." />
+    <meta property="og:title" content="Barun Tiwary — Full Stack Engineer → Red Team" />
+    <meta property="og:description" content="Full Stack Engineer transitioning into cybersecurity and red teaming. Builds production systems, now learning to break them." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://baruntiwary.dev/" />
     <meta property="og:image" content="https://baruntiwary.dev/images/barun.png" />
@@ -24,6 +24,29 @@
         document.documentElement.dataset.theme = "dark"
       }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Barun Tiwary",
+      "url": "https://baruntiwary.dev/",
+      "image": "https://baruntiwary.dev/images/barun.png",
+      "email": "mailto:baruntiwary620@gmail.com",
+      "jobTitle": "Full Stack Engineer",
+      "description": "Full Stack Engineer transitioning into cybersecurity and red teaming. Builds production systems, now learning to break them.",
+      "knowsAbout": [
+        "Full-stack engineering",
+        "Web application security",
+        "Penetration testing",
+        "Red teaming"
+      ],
+      "sameAs": [
+        "https://github.com/Barun355",
+        "https://linkedin.com/in/barun-tiwary",
+        "https://x.com/21me60"
+      ]
+    }
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -32,6 +55,7 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="/" aria-current="page">Home</a>
           <a href="/work/">Work</a>
+          <a href="/security/">Security</a>
           <a href="/blog/">Blog</a>
           <a href="/resume/">Resume</a>
         </nav>
@@ -53,39 +77,50 @@
           <img class="avatar" src="/images/barun.png" alt="Portrait of Barun Tiwary" width="80" height="80" />
           <h1>Barun Tiwary</h1>
           <div class="identity-line">
-            <span>Full Stack Engineer</span>
+            <span>Full Stack Engineer · transitioning to Red Teaming</span>
             <span class="muted">·</span>
             <button class="copy-btn" type="button" data-copy="baruntiwary620@gmail.com">baruntiwary620@gmail.com</button>
           </div>
-          <p>I build applications, APIs, and data-driven systems across the stack — from frontend experiences and backend services to databases, integrations, and production infrastructure.</p>
-          <p class="status-line"><b>now</b> rad labs · production systems · typescript + sql</p>
+          <p class="tagline">Full Stack Engineer moving into red teaming. I’ve built production systems — now I’m learning to break them.</p>
+          <p class="muted">Shipping authentication, APIs, device networks, and deploys showed me where real systems crack. I’m turning that builder’s view into offensive security: web and API exploitation, Linux and network attacks, and lab work written up honestly.</p>
+          <p class="status-line"><b>now</b> rad labs · full stack · learning offensive security</p>
           <div class="hero-links">
             <a href="https://github.com/Barun355">GitHub</a>
             <a href="https://linkedin.com/in/barun-tiwary">LinkedIn</a>
             <a href="/resume/">Resume</a>
+            <a href="/security/">Security track</a>
           </div>
         </section>
 
         <section class="section">
           <div class="section-head">
             <h2>Selected work</h2>
+            <a class="more" href="/security/">Security track</a>
           </div>
           <div class="stack" data-stagger>
+            <a class="system" href="/blog/station-tokens/">
+              <div class="row-top">
+                <h3>Smart Weight System</h3>
+                <span class="label">Shipped</span>
+              </div>
+              <p>Scales, printers, and Raspberry Pi stations writing inventory with station tokens, plant isolation, and offline sync.</p>
+              <p class="attack">Where it could break: a cloned device, a stolen token, a replayed offline event.</p>
+            </a>
+            <a class="system" href="/blog/exposed-postgres/">
+              <div class="row-top">
+                <h3>Simple Form</h3>
+                <span class="label">Shipped · attacked</span>
+              </div>
+              <p>A public form product. A ransomware bot got into its internet-facing Postgres through default credentials, and I hardened the box afterwards.</p>
+              <p class="attack">Where it broke: an open port and a default password. No exploit was needed.</p>
+            </a>
             <div class="system">
-              <h3>Smart ERP System</h3>
-              <p>Production workflows for inventory, production, and dispatch — with offline sync, QR, hardware, and relational data.</p>
-            </div>
-            <div class="system">
-              <h3>Reconnect</h3>
-              <p>React Native / Expo product work on an existing backend: auth, APIs, and features that cannot break current users.</p>
-            </div>
-            <div class="system">
-              <h3>Simple Form</h3>
-              <p>A form product from scratch: dynamic fields, validation, submissions, and live analytics.</p>
-            </div>
-            <div class="system">
-              <h3>Recipe Reveal</h3>
-              <p>Full-stack Next.js app using SSR / SSG, then shipped to production.</p>
+              <div class="row-top">
+                <h3>Custom OIDC provider</h3>
+                <span class="label">Project</span>
+              </div>
+              <p>An experimental OpenID Connect provider built with Bun, to understand the identity flow from the inside.</p>
+              <p class="attack">Where it could break: redirect URIs, token handling, a state or nonce that isn’t checked.</p>
             </div>
           </div>
         </section>
@@ -99,84 +134,100 @@
             <article class="exp">
               <div class="exp-top">
                 <h3>Rad Labs <span class="badge"><i></i>Working</span></h3>
-                <span class="exp-meta">Present · India</span>
+                <span class="exp-meta">Sep 2026 – Present</span>
               </div>
-              <p>Software Engineer — production features across the stack.</p>
+              <p>Full Stack Engineer / Project Lead: building a healthcare mobile app from the ground up.</p>
               <button class="expand" type="button" data-expand="radlabs" aria-expanded="false">Show details</button>
               <div class="details" id="radlabs">
                 <ul>
-                  <li>Build and ship product software in a startup, not isolated tickets.</li>
-                  <li>Work across frontend, APIs, data, and delivery.</li>
-                  <li>Public product names and dates stay conservative until confirmed.</li>
+                  <li>Lead development of a healthcare mobile application, and extend the existing backend it shares with web dashboards and production workflows.</li>
+                  <li>Build production features across React Native / Expo, APIs, authentication, data flows, and backend services without breaking existing consumers.</li>
+                  <li>Attack surface: patient data, authentication, and a backend that other clients already depend on.</li>
                 </ul>
               </div>
             </article>
             <article class="exp">
               <div class="exp-top">
                 <h3>Consultifi Data</h3>
-                <span class="exp-meta">India</span>
+                <span class="exp-meta">Feb–Jun 2026</span>
               </div>
-              <p>Operational systems: ERP workflows, data, and integrations.</p>
+              <p>Full Stack Engineer: production ERP workflows with device integrations.</p>
               <button class="expand" type="button" data-expand="consultifi" aria-expanded="false">Show details</button>
               <div class="details" id="consultifi">
                 <ul>
-                  <li>Owned work from requirements through architecture, build, and handoff.</li>
-                  <li>Built production-oriented ERP flows around inventory, production, and dispatch.</li>
-                  <li>Client names stay confidential.</li>
+                  <li>Built ERP workflows across frontend, backend services, databases, and device integrations with React / Electron, SQLite / PostgreSQL, and REST APIs.</li>
+                  <li>QR-based workflows, real-time updates, hardware integrations, and offline-first sync with idempotent writes.</li>
+                  <li>Attack surface: device identity, plant-to-plant isolation, and replay through the sync queue.</li>
                 </ul>
               </div>
             </article>
             <article class="exp">
               <div class="exp-top">
                 <h3>SIA Health</h3>
-                <span class="exp-meta">Jun–Oct 2025</span>
+                <span class="exp-meta">May–Oct 2025</span>
               </div>
-              <p>Software Engineering Intern — meal-planning and quiz tools.</p>
+              <p>Full Stack Developer: full-stack features in a healthcare product.</p>
               <button class="expand" type="button" data-expand="sia" aria-expanded="false">Show details</button>
               <div class="details" id="sia">
                 <ul>
-                  <li>Shipped features into an existing healthcare product.</li>
-                  <li>Next.js, TypeScript, and form-heavy React workflows.</li>
+                  <li>Developed and maintained features across frontend interfaces, backend APIs, database workflows, and third-party integrations.</li>
+                  <li>Translated requirements into working features and investigated production issues.</li>
+                  <li>Attack surface: user input in health-related forms, and how that data is validated and stored.</li>
                 </ul>
               </div>
             </article>
             <article class="exp">
               <div class="exp-top">
                 <h3>Autonomous Work</h3>
-                <span class="exp-meta">Ongoing</span>
+                <span class="exp-meta">Jan–Mar 2025</span>
               </div>
-              <p>Self-directed products taken from idea to production.</p>
+              <p>Full Stack Developer: web application features across the stack.</p>
               <button class="expand" type="button" data-expand="auto" aria-expanded="false">Show details</button>
               <div class="details" id="auto">
                 <ul>
-                  <li>Simple Form, Recipe Reveal, and other full-stack apps I owned end to end.</li>
-                  <li>Practice for APIs, databases, deploy, and product decisions.</li>
+                  <li>Built web application features across frontend and backend layers, integrating APIs and database-driven workflows.</li>
                 </ul>
               </div>
             </article>
           </div>
         </section>
 
+        <section class="section" id="achievements">
+          <div class="section-head">
+            <h2>Achievements</h2>
+          </div>
+          <div class="stack" data-stagger>
+            <div class="system">
+              <div class="row-top">
+                <h3>Open source: Mailchimp integration for Corsair</h3>
+                <span class="label">Merged PR · Jul 2026</span>
+              </div>
+              <p>Added 56 Mailchimp Marketing API endpoints and 4 webhook triggers to <code class="inline-code">corsairdev/corsair</code>, with OAuth 2.0 and API-key auth, webhook-secret validation, multi-tenant routing, and 56 unit tests.</p>
+              <p class="attack"><a href="https://github.com/corsairdev/corsair/pull/351">View PR #351</a> · <a href="/blog/webhook-secrets/">Read the security write-up</a></p>
+            </div>
+          </div>
+        </section>
+
         <section class="section">
           <div class="section-head">
-            <h2>Engineering principles</h2>
+            <h2>Principles</h2>
           </div>
           <div class="principles" data-stagger>
             <div class="principle system">
-              <h3>Systems over syntax</h3>
-              <p>Understand the requirement, data flow, and architecture first. The language is the implementation layer.</p>
+              <h3>Know how it’s built before you break it</h3>
+              <p>Shipping auth flows, APIs, and deploys is how I learned where they get misconfigured.</p>
             </div>
             <div class="principle system">
-              <h3>Build for production</h3>
-              <p>Features are not done until they are tested, deployed, and operable.</p>
+              <h3>Every trust boundary is an attack surface</h3>
+              <p>A device token, a webhook URL, and a database port are all doors. Know which ones are open.</p>
             </div>
             <div class="principle system">
-              <h3>Understand the data flow</h3>
-              <p>Most bugs live between the UI, the API, and the database — not in a single file.</p>
+              <h3>Defaults are the real entry points</h3>
+              <p>My own database was breached through a default password, not a clever exploit.</p>
             </div>
             <div class="principle system">
-              <h3>Learn what the problem requires</h3>
-              <p>Comfortable picking up new tools when the system needs them. Currently learning Go.</p>
+              <h3>Label what’s real</h3>
+              <p>Shipped, practiced in labs, or learning. Never blurred together.</p>
             </div>
           </div>
         </section>
@@ -187,29 +238,29 @@
             <a class="more" href="/blog/">All posts</a>
           </div>
           <div class="stack" data-stagger>
-            <a class="post" href="/blog/offline-first-erp/">
+            <a class="post" href="/blog/exposed-postgres/">
               <div class="post-top">
-                <h3>Offline-first data on a factory floor</h3>
+                <h3>Default Postgres credentials are an open door</h3>
                 <span class="row-meta">Sep 2026</span>
               </div>
-              <p>How sync, retries, and idempotency keep operations moving when the network drops.</p>
-              <div class="post-foot"><span>Systems · Engineering</span><span>Read more</span></div>
+              <p>A ransomware bot found a public database. How the attack worked, and what changed after.</p>
+              <div class="post-foot"><span>Security · Red Team</span><span>Read more</span></div>
             </a>
-            <a class="post" href="/blog/building-simple-form/">
+            <a class="post" href="/blog/station-tokens/">
               <div class="post-top">
-                <h3>Building a form product from scratch</h3>
-                <span class="row-meta">Aug 2026</span>
+                <h3>Station tokens and plant isolation</h3>
+                <span class="row-meta">Sep 2026</span>
               </div>
-              <p>Dynamic fields, validation, submissions, and analytics as one system.</p>
-              <div class="post-foot"><span>Engineering</span><span>Read more</span></div>
+              <p>How factory devices prove who they are, and how an attacker would try to fake it.</p>
+              <div class="post-foot"><span>Security · Engineering</span><span>Read more</span></div>
             </a>
-            <a class="post" href="/blog/recipe-reveal-nextjs/">
+            <a class="post" href="/blog/webhook-secrets/">
               <div class="post-top">
-                <h3>SSR, SSG, and shipping Recipe Reveal</h3>
-                <span class="row-meta">Aug 2026</span>
+                <h3>Webhook secrets in a multi-tenant integration</h3>
+                <span class="row-meta">Sep 2026</span>
               </div>
-              <p>A Next.js app is a rendering decision plus a production deploy.</p>
-              <div class="post-foot"><span>Engineering</span><span>Read more</span></div>
+              <p>Forged callbacks and tenant confusion, and the checks that stop them.</p>
+              <div class="post-foot"><span>Security · Engineering</span><span>Read more</span></div>
             </a>
           </div>
         </section>
@@ -218,12 +269,13 @@
 
     <footer class="site-footer">
       <div class="wrap">
-        <blockquote class="quote">Systems first. Languages second.</blockquote>
+        <blockquote class="quote">Know how it’s built before you break it.</blockquote>
         <div class="footer-cols">
           <div>
             <h2>Navigate</h2>
             <a href="/">Home</a>
             <a href="/work/">Work</a>
+            <a href="/security/">Security</a>
             <a href="/blog/">Blog</a>
             <a href="/resume/">Resume</a>
           </div>
